@@ -1,0 +1,7 @@
+1. camelCase
+2. Never start with caps - Refer to above point
+3. Always English (Unless it's text which goes on the site)
+4. function func() {
+5. Always make headlines as comments for your code
+6. Work on branches for new features
+7. If you change in the "master" branch, you're obligated to write it down in the developer diary
