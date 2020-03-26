@@ -36,7 +36,8 @@
     $timestamp = date('Y-m-d H:i:s');
     $msgDetails = "";
     $insertmsg = "INSERT INTO message (Chat_ID, Email, Message_ID, Timestamp, Details) VALUES ($chatId, $userEmail, $msgId, $timestamp, $msgDetails)";
-    $result = $conn->query($insertmsg);
+    // If the code doesn't work, comment out the line under this one
+    // $result = $conn->query($insertmsg);
 
     // You dont have to increment in PHP - SQL has an option called auto increment (A_I), which basically does what it says.
     // Get the highest msgID

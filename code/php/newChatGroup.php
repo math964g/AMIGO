@@ -15,80 +15,38 @@
     </form>
 
 
-    <?php
+<?php
 
-// if (isset($_POST["userMessage"])) {
-//
-//   $cheese = $_POST["userMessage"];
-//
-//   echo $cheese;
-//
-// }
-
-
-// Save data
+  $chatName = "";
 
   require 'dbConnect.php';
 
-    $server = "localhost";
-    $user = "root";
-    $pw = "";
-    $db = "amigo_db";
-    // Create connection
-    $conn = new mysqli($server, $user, $pw, $db);
-    $chatId = 0;
-    $userEmail = "";
-    $msgId = 1;
-    $timestamp = date('Y-m-d H:i:s');
-    $msgDetails = "";
-    $insertmsg = "INSERT INTO message (Chat_ID, Email, Message_ID, Timestamp, Details) VALUES ($chatId, $userEmail, $msgId, $timestamp, $msgDetails)";
-    $result = $conn->query($insertmsg);
+  if (isset($_POST["chatName"])) {
 
-    // Auto increment is a thing, in the database. Don't do this again, noob
-    // Get the highest msgID
-    $getMsgId = "SELECT MAX(Message_ID) as 'high_chat_id' FROM (message)";
-    $res = mysqli_query($conn, $getMsgId);
-    $data = mysqli_fetch_array($res);
+    $chatName = $_POST["chatName"];
 
-    echo "Chat ID: " . $data['high_chat_id'];
+    if ($chatName != "") {
 
+      $sql = "INSERT INTO `chat_group`(`Chat_Name`) VALUES ('$chatName')";
 
+      if ($conn->query($sql) === TRUE) {
 
+        echo "New chat created!";
 
-    // Check connection
-    if ($conn->connect_error) {
+      } else {
 
-      die("Connection failed: " . $conn->connect_error);
+        echo "Error: " . $sql . "<br>" . $conn->error;
 
-    }
-    // echo "Connected successfully";
-
-    if (isset($_POST["userMessage"])) {
-
-      $msgDetails = $_POST["userMessage"];
-
-      if ($msgDetails != "") {
-
-        $chatId = 1;
-        $userEmail = "john@lennon.com";
-        $msgId = $data['high_chat_id'] + 1;
-
-        $sql = "INSERT INTO message (Chat_ID, Email, Message_ID, Details)
-        VALUES ('$chatId', '$userEmail', '$msgId', '$msgDetails')";
-
-        if ($conn->query($sql) === TRUE) {
-          echo "New record created successfully";
-        } else {
-          echo "Error: " . $sql . "<br>" . $conn->error;
-        }
       }
+
     }
 
+  }
 
-    $conn->close();
+$conn->close();
 
 
-    ?>
+?>
 
 
 
