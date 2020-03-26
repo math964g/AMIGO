@@ -2,15 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Save Message</title>
+    <title>New chat group</title>
   </head>
   <body>
 
-<h1>Send new message</h1>
+<h1>Create chat group</h1>
 
-    <form action="saveMessage.php" method="post">
-      <label for="userMessage">Write your message</label>
-      <input type="text" id="userMessage" name="userMessage" size="32" />
+    <form action="newChatGroup.php" method="post">
+      <label for="chatName">Write chat name</label>
+      <input type="text" id="chatName" name="chatName" size="32" />
       <input type="submit" name="submit" value="Send" />
     </form>
 
@@ -30,6 +30,12 @@
 
   require 'dbConnect.php';
 
+    $server = "localhost";
+    $user = "root";
+    $pw = "";
+    $db = "amigo_db";
+    // Create connection
+    $conn = new mysqli($server, $user, $pw, $db);
     $chatId = 0;
     $userEmail = "";
     $msgId = 1;
@@ -38,7 +44,7 @@
     $insertmsg = "INSERT INTO message (Chat_ID, Email, Message_ID, Timestamp, Details) VALUES ($chatId, $userEmail, $msgId, $timestamp, $msgDetails)";
     $result = $conn->query($insertmsg);
 
-    // You dont have to increment in PHP - SQL has an option called auto increment (A_I), which basically does what it says.
+    // Auto increment is a thing, in the database. Don't do this again, noob
     // Get the highest msgID
     $getMsgId = "SELECT MAX(Message_ID) as 'high_chat_id' FROM (message)";
     $res = mysqli_query($conn, $getMsgId);
