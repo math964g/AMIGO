@@ -97,12 +97,17 @@ $gradientOrange: #E68E60;
     width: 25%;
     height: 70%;
     margin: auto 10px;
-    background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
-    color: #FFFFFF;
+    background: #F2F2F2;
+    color: #000;
     border-radius: 30vw;
     border-style: none;
     text-align: center;
     scroll-snap-align: center;
+
+    & > .active {
+      background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+      color: #FFF;
+    }
 
     & > p {
       margin: auto;
