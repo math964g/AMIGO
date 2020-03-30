@@ -1,0 +1,115 @@
+$gradientRed: #DE5543;
+$gradientPeach: #FFC4BC;
+$gradientOrange: #E68E60;
+@import "_reset.scss";
+
+.ctaButton {
+  width: 30vw;
+  height: 8vw;
+  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+  color: #FFFFFF;
+  border-radius: 30vw;
+  border-style: none;
+}
+
+.categoryButton {
+  width: 30vw;
+  height: 8vw;
+  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+  color: #FFFFFF;
+  border-radius: 30vw;
+  border-style: none;
+}
+
+.topBar {
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  width: 100vw;
+  height: 10vh;
+  background-color: red;
+
+  & > div {
+    margin: auto;
+  }
+
+  & > .returnButton {
+    display: block;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+  }
+
+  & > h1 {
+    color: #FFFFFF;
+    margin: auto;
+  }
+
+  & > .addEvent {
+    display: block;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
+.categorySlider {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  overflow-x: auto;
+  // Smooth scroll for mobile
+  -webkit-overflow-scrolling: touch;
+  // Makes the elements "snap" to a position
+  scroll-snap-type: x mandatory;
+  // background-color: blue;
+
+  & > .categoryItem {
+    display: flex;
+    flex-shrink: 0;
+    width: 25%;
+    height: 70%;
+    margin: auto 10px;
+    background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+    color: #FFFFFF;
+    border-radius: 30vw;
+    border-style: none;
+    text-align: center;
+
+    & > p {
+      margin: auto;
+    }
+  }
+}
+
+.categorySlider > div {
+  scroll-snap-align: start;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+
+.eventFeed {
+  display: grid;
+  margin: 10px;
+  // background-color: green;
+
+  & > .eventItem {
+    display: block;
+    height: 30vh;
+    margin: 10px;
+    background-color: pink;
+    border-radius: 5vw;
+  }
+}
+
+.footerBar {
+  display: block;
+  width: 100vw;
+  height: 30vh;
+  background-color: yellow;
+}
