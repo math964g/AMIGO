@@ -10,7 +10,7 @@
   text-decoration: none; }
 
 .ctaButton {
-  width: 30vw;
+  width: 100vw;
   height: 8vw;
   background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%);
   color: #FFFFFF;
@@ -29,23 +29,45 @@
   display: grid;
   grid-template-columns: 25% auto 25%;
   width: 100vw;
-  height: 10vh;
-  background-color: red; }
+  height: 10vh; }
   .topBar > div {
     margin: auto; }
   .topBar > .returnButton {
     display: block;
-    background-color: black;
-    width: 50px;
-    height: 50px; }
+    width: 30px;
+    height: 30px; }
+    .topBar > .returnButton > .returnArrow {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%, -50%) rotate(135deg);
+      height: 50%;
+      border: solid #000;
+      border-width: 0 3px 3px 0;
+      padding: 3px; }
   .topBar > h1 {
-    color: #FFFFFF;
+    color: #000;
     margin: auto; }
   .topBar > .addEvent {
     display: block;
-    background-color: black;
-    width: 50px;
-    height: 50px; }
+    width: 30px;
+    height: 30px; }
+    .topBar > .addEvent > .lineVertical {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 3px;
+      background-color: #000; }
+    .topBar > .addEvent > .lineHorizontal {
+      position: relative;
+      left: 50%;
+      top: -3px;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: #000; }
 
 .categorySlider {
   display: flex;
@@ -64,12 +86,10 @@
     color: #FFFFFF;
     border-radius: 30vw;
     border-style: none;
-    text-align: center; }
+    text-align: center;
+    scroll-snap-align: center; }
     .categorySlider > .categoryItem > p {
       margin: auto; }
-
-.categorySlider > div {
-  scroll-snap-align: start; }
 
 ::-webkit-scrollbar {
   width: 0px;
@@ -85,7 +105,7 @@
     height: 30vh;
     margin: 10px;
     background-color: pink;
-    border-radius: 5vw; }
+    border-radius: 20px; }
 
 .footerBar {
   display: block;
