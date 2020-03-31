@@ -29,7 +29,7 @@ if ($resultCheck > 0) {
     // Builds the time into a beautiful string
     $eventDate = $day . ". " . $month . " - " . $time;
 
-    echo '<div class="eventItem" style="background-image: url(' . $picturePath . ');">
+    echo '<div class="eventItem" style="background-image: url(' .  $row['Image_Path'] . ');">
 
       <div class="eventDetailsFilter">
 
