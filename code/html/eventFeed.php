@@ -79,7 +79,10 @@
 
       <h2>About us</h2> <br>
       <p>Job</p>
+      <p>FAQ</p>
+      <p>Support</p>
       <p>Contact</p>
+      <p>Feedback</p>
 
     </div>
 

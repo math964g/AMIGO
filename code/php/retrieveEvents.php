@@ -16,6 +16,19 @@ if ($resultCheck > 0) {
   // echo '<div class="eventFeed">';
 
   while ($row = mysqli_fetch_assoc($result)) {
+
+    // Converts the time to human
+
+    // Converts the string to date format
+    $dt = strtotime($row['Date']);
+
+    $day = date("d", $dt);
+    $month = date("F", $dt);
+    $time = date("H", $dt) . ":" . date("i", $dt);
+
+    // Builds the time into a beautiful string
+    $eventDate = $day . ". " . $month . " - " . $time;
+
     echo '<div class="eventItem" style="background-image: url(' . $picturePath . ');">
 
       <div class="eventDetailsFilter">
@@ -25,7 +38,7 @@ if ($resultCheck > 0) {
           <h2>' . $row['Event_Name'] . '</h2>
 
           <div class="eventDate">
-            ' . $row['Date'] . '
+            ' . $eventDate . '
           </div>
 
           <div class="eventLocation">
