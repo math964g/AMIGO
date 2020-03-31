@@ -2,7 +2,7 @@
 
 require 'dbConnect.php';
 
-$picturePath = "'../../assets/event_img/testpic.png'";
+$picturePath = "'../../assets/event_img/testpic.jpg'";
 
 $allEvents = "SELECT * FROM `events`;";
 $result = mysqli_query($conn, $allEvents);

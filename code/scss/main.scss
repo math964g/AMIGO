@@ -94,7 +94,7 @@ $gradientOrange: #E68E60;
   & > .categoryItem {
     position: relative;
     top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
     display: flex;
     flex-shrink: 0;
     width: 25%;
@@ -139,7 +139,6 @@ $gradientOrange: #E68E60;
     display: block;
     height: 30vh;
     margin: 10px;
-    background-color: pink;
     border-radius: 20px;
     background-size: cover;
   }

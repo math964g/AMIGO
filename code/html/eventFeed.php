@@ -88,6 +88,10 @@
 
   </div>
 
+  <script src="../js/categorySelector.js">
+
+  </script>
+
 </body>
 
 </html>
