@@ -108,7 +108,40 @@
     height: 30vh;
     margin: 10px;
     background-color: pink;
-    border-radius: 20px; }
+    border-radius: 20px;
+    background-size: cover; }
+
+.eventDetailsFilter {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  bottom: -70%; }
+
+.eventDetailsFilter::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #FFF;
+  filter: opacity(80%) blur(10px);
+  content: ""; }
+
+.eventDetails {
+  position: relative;
+  display: grid;
+  grid-template-areas: 'header header' 'date location';
+  grid-gap: 5px;
+  width: 100%;
+  height: 30%;
+  padding: 0px 15px 15px 15px; }
+  .eventDetails > h2 {
+    grid-area: header; }
+  .eventDetails > .eventDate {
+    grid-area: date; }
+  .eventDetails > .eventLocation {
+    grid-area: location;
+    text-align: right; }
 
 .footerBar {
   display: block;
