@@ -104,15 +104,22 @@ $gradientOrange: #E68E60;
     text-align: center;
     scroll-snap-align: center;
 
-    & > .active {
-      background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
-      color: #FFF;
-    }
+    // Why can't this be inside here?
+    // & > .active {
+    //  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
+    //  color: #FFF !important;
+    // }
 
     & > p {
       margin: auto;
     }
   }
+}
+
+// Instead it has to be outside? Also why does it need the important tag?
+.active {
+ background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
+ color: #FFF !important;
 }
 
 // Hides the scrollbar
@@ -146,7 +153,11 @@ $gradientOrange: #E68E60;
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0; left: 0;
+  padding: 2% 1% 0 1%;
+  transform: translate(-2%, -2%);
+  border-radius: 20px;
+  top: 0;
+  left: 0;
   background: #FFF;
   filter: opacity(80%) blur(10px);
   content: "";
@@ -158,28 +169,35 @@ $gradientOrange: #E68E60;
   grid-template-areas:
     'header header'
     'date location';
-  grid-gap: 5px;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
   width: 100%;
-  height: 30%;
-  padding: 0px 15px 15px 15px;
+  height: 100%;
+  padding: 5px 15px 5px 15px;
 
   & > h2 {
     grid-area: header;
+    // Makes sure the text is centered inside the grid slot on long screens. No idea when you'd see this, but better safe than sorry.
+    margin: auto 0 auto 0;
   }
 
   & > .eventDate {
     grid-area: date;
+    margin: auto 0 auto 0;
   }
 
   & > .eventLocation {
     grid-area: location;
     text-align: right;
+    margin: auto 0 auto 0;
   }
 }
 
 .footerBar {
-  display: block;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
   width: 100vw;
-  height: 30vh;
-  background-color: yellow;
+  padding: 10px;
+  background-color: #D6D6D6;
 }

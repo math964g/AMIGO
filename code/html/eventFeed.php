@@ -60,28 +60,6 @@
 
   <div class="eventFeed">
 
-    <div class="eventItem" style="background-image: url('../../assets/event_img/testpic.png');">
-
-      <div class="eventDetailsFilter">
-
-        <div class="eventDetails">
-
-          <h2>Viking øl</h2>
-
-          <div class="eventDate">
-            Tuesday 11:00
-          </div>
-
-          <div class="eventLocation">
-            Nede på havnen
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
     <?php include '../php/retrieveEvents.php'; ?>
 
   </div>
