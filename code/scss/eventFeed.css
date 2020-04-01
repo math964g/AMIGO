@@ -17,6 +17,14 @@
   border-radius: 30vw;
   border-style: none; }
 
+.footerBar {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
+  width: 100vw;
+  padding: 10px;
+  background-color: #D6D6D6; }
+
 .categoryButton {
   width: 30vw;
   height: 8vw;
@@ -152,13 +160,5 @@
     grid-area: location;
     text-align: right;
     margin: auto 0 auto 0; }
-
-.footerBar {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 15px;
-  width: 100vw;
-  padding: 10px;
-  background-color: #D6D6D6; }
 
 /*# sourceMappingURL=eventFeed.css.map */

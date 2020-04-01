@@ -1,13 +1,5 @@
 @import "master.scss";
 
-.ctaButton {
-  width: 100vw;
-  height: 8vw;
-  background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%);
-  color: #FFFFFF;
-  border-radius: 30vw;
-  border-style: none;
-}
 
 .categoryButton {
   width: 30vw;
@@ -186,13 +178,4 @@
     text-align: right;
     margin: auto 0 auto 0;
   }
-}
-
-.footerBar {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 15px;
-  width: 100vw;
-  padding: 10px;
-  background-color: #D6D6D6;
 }

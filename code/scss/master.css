@@ -9,4 +9,20 @@
   list-style: none;
   text-decoration: none; }
 
+.ctaButton {
+  width: 100vw;
+  height: 8vw;
+  background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%);
+  color: #FFFFFF;
+  border-radius: 30vw;
+  border-style: none; }
+
+.footerBar {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
+  width: 100vw;
+  padding: 10px;
+  background-color: #D6D6D6; }
+
 /*# sourceMappingURL=master.css.map */
