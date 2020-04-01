@@ -4,14 +4,14 @@ $Peach: #FFC4BC;
 
 @import "_reset.scss";
 
-
 .ctaButton {
-  width: 100vw;
+  width: 150px;
   height: 8vw;
   background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%);
   color: #FFFFFF;
   border-radius: 30vw;
   border-style: none;
+  font-weight: bold;
 }
 
 .footerBar {

@@ -10,12 +10,13 @@
   text-decoration: none; }
 
 .ctaButton {
-  width: 100vw;
+  width: 150px;
   height: 8vw;
   background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%);
   color: #FFFFFF;
   border-radius: 30vw;
-  border-style: none; }
+  border-style: none;
+  font-weight: bold; }
 
 .footerBar {
   display: grid;
