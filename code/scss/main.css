@@ -74,6 +74,7 @@
   width: 100vw;
   height: 10vh;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory; }
   .categorySlider > .categoryItem {
@@ -93,10 +94,9 @@
     scroll-snap-align: center; }
     .categorySlider > .categoryItem > p {
       margin: auto; }
-
-.active {
-  background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%) !important;
-  color: #FFF !important; }
+  .categorySlider > .active {
+    background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%) !important;
+    color: #FFF !important; }
 
 ::-webkit-scrollbar {
   width: 0px;

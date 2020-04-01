@@ -4,7 +4,7 @@ require 'dbConnect.php';
 
 $picturePath = "'../../assets/event_img/testpic.jpg'";
 
-$allEvents = "SELECT * FROM `events`;";
+$allEvents = "SELECT * FROM `events` ORDER BY `Event_ID` DESC;";
 $result = mysqli_query($conn, $allEvents);
 // Checks if there are any data in the database, by getting the nr. of rows in the table
 $resultCheck = mysqli_num_rows($result);

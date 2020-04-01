@@ -1,6 +1,7 @@
 $gradientRed: #DE5543;
 $gradientPeach: #FFC4BC;
 $gradientOrange: #E68E60;
+
 @import "_reset.scss";
 
 .ctaButton {
@@ -86,6 +87,8 @@ $gradientOrange: #E68E60;
   width: 100vw;
   height: 10vh;
   overflow-x: auto;
+  // Makes the items undraggable on the y-axis
+  overflow-y: hidden;
   // Smooth scroll for mobile
   -webkit-overflow-scrolling: touch;
   // Makes the elements "snap" to a position
@@ -107,23 +110,17 @@ $gradientOrange: #E68E60;
     text-align: center;
     scroll-snap-align: center;
 
-    // Why can't this be inside here?
-    // & > .active {
-    //  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
-    //  color: #FFF !important;
-    // }
-
     & > p {
       margin: auto;
     }
   }
+
+    & > .active {
+      background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
+      color: #FFF !important;
+  }
 }
 
-// Instead it has to be outside? Also why does it need the important tag?
-.active {
- background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
- color: #FFF !important;
-}
 
 // Hides the scrollbar
 ::-webkit-scrollbar {
