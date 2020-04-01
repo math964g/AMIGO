@@ -18,7 +18,7 @@
       <br>
 
       <label for="eventDate">Date: </label>
-      <input type="text" id="eventDate" name="eventDate" size="32" />
+      <input type="datetime-local" id="eventDate" name="eventDate" size="32" />
       <br>
 
       <label for="eventLocation">Location: </label>
