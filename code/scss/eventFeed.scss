@@ -1,13 +1,9 @@
-$gradientRed: #DE5543;
-$gradientPeach: #FFC4BC;
-$gradientOrange: #E68E60;
-
-@import "_reset.scss";
+@import "master.scss";
 
 .ctaButton {
   width: 100vw;
   height: 8vw;
-  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+  background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%);
   color: #FFFFFF;
   border-radius: 30vw;
   border-style: none;
@@ -16,7 +12,7 @@ $gradientOrange: #E68E60;
 .categoryButton {
   width: 30vw;
   height: 8vw;
-  background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+  background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%);
   color: #FFFFFF;
   border-radius: 30vw;
   border-style: none;
@@ -116,7 +112,7 @@ $gradientOrange: #E68E60;
   }
 
     & > .active {
-      background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%) !important;
+      background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%) !important;
       color: #FFF !important;
   }
 }
