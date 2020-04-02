@@ -89,6 +89,26 @@
 
   </div>
 
+  <div class="bottomBar">
+
+    <div class="shortcutItem">
+
+    </div>
+    
+    <div class="shortcutItem">
+
+    </div>
+
+    <div class="shortcutItem">
+
+    </div>
+
+    <div class="shortcutItem">
+
+    </div>
+
+  </div>
+
   <script src="../js/categorySelector.js">
 
   </script>

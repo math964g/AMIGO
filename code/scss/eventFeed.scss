@@ -10,6 +10,10 @@
 }
 
 .topBar {
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 5;
   display: grid;
   grid-template-columns: 25% auto 25%;
   width: 100vw;
@@ -68,11 +72,42 @@
   }
 }
 
-// https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
-.categorySlider {
-  display: flex;
+.bottomBar {
+  position: sticky;
+  bottom: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
   width: 100vw;
   height: 10vh;
+
+  & > div {
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  & > .shortcutItem {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    }
+}
+
+// https://css-tricks.com/can-get-pretty-far-making-slider-just-html-css/
+.categorySlider {
+  position: sticky;
+  top: 10vh;
+  background-color: #FFF;
+  z-index: 5;
+  display: flex;
+  // width: 100vw;
+  height: 10vh;
+  // margin: 10px;
+  // padding: 10px;
   overflow-x: auto;
   // Makes the items undraggable on the y-axis
   overflow-y: hidden;
