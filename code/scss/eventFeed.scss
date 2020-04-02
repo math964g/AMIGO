@@ -175,11 +175,11 @@
   height: 100%;
   padding: 2% 1% 0 1%;
   transform: translate(-2%, -2%);
-  border-radius: 20px;
+  // border-radius: 20px 20px 20px 20px;
   top: 0;
   left: 0;
   background: #FFF;
-  filter: opacity(80%) blur(10px);
+  filter: opacity(80%);
   content: "";
 }
 
@@ -193,7 +193,7 @@
   grid-row-gap: 5px;
   width: 100%;
   height: 100%;
-  padding: 5px 15px 5px 15px;
+  padding: 10px 15px 10px 15px;
 
   & > h2 {
     grid-area: header;
