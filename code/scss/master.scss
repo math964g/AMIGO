@@ -1,7 +1,6 @@
-$Red: #DE5543;
-$Orange: #E68E60;
-$Peach: #FFC4BC;
-
+$Red: #DE7F43;
+$Orange: #E6B860;
+$Peach: #FDCE4E;
 @import "_reset.scss";
 
 .ctaButton {
@@ -21,4 +20,29 @@ $Peach: #FFC4BC;
   width: 100vw;
   padding: 10px;
   background-color: #D6D6D6;
+}
+
+.bottomBar {
+  position: sticky;
+  bottom: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100vw;
+  height: 10vh;
+
+  & > div {
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  & > .shortcutItem {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+  }
 }

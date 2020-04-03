@@ -12,7 +12,7 @@
 .ctaButton {
   width: 150px;
   height: 8vw;
-  background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%);
+  background: linear-gradient(90deg, #DE7F43 0%, #E6B860 75%, #FDCE4E 100%);
   color: #FFFFFF;
   border-radius: 30vw;
   border-style: none;
@@ -25,5 +25,25 @@
   width: 100vw;
   padding: 10px;
   background-color: #D6D6D6; }
+
+.bottomBar {
+  position: sticky;
+  bottom: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100vw;
+  height: 10vh; }
+  .bottomBar > div {
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px; }
+  .bottomBar > .shortcutItem {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: blue; }
 
 /*# sourceMappingURL=master.css.map */
