@@ -66,3 +66,12 @@
 
   </body>
 </html>
+
+
+<script>
+
+// Grabs the event_ID from the previous page, based on the clicked event
+let result = sessionStorage.getItem("clickEventId");
+console.log(result);
+
+</script>

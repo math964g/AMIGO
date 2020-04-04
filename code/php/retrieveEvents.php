@@ -119,8 +119,22 @@ else {
 
       // This builds the string and inserts the html
       eventContainer.innerHTML +=
-      '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + formattedEventDate + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
+      '<div id="' + currentEvents[i].Event_ID +'" class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + formattedEventDate + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
     }
+  }
+
+  // Handles the data transfer to the showEvent page
+  let listedEvents = document.getElementsByClassName("eventItem");
+
+  for (let i = 0; i < listedEvents.length; i++) {
+    listedEvents[i].addEventListener("click", goTo);
+  }
+
+  function goTo() {
+    let eventId = this.id;
+    console.log(eventId);
+    sessionStorage.setItem("clickEventId", eventId);
+    location.href = "http://localhost/amigo/code/php/showEvent.php";
   }
 }
 
