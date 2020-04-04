@@ -34,39 +34,20 @@ if ($resultCheck > 0) {
     $eventDate = $day . ". " . $month . " - " . $time;
 
 
-    echo '<div class="eventItem" style="background-image: url(' .  $row['Image_Path'] . ');">
 
-      <div class="eventDetailsFilter">
-
-        <div class="eventDetails">
-
-          <h2>' . $row['Event_Name'] . '</h2>
-
-          <div class="eventDate">
-            ' . $eventDate . '
-          </div>
-
-          <div class="eventLocation">
-            ' . $row['Location'] . '
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>';
   }
 
   echo "</div>";
 
 }
 
-// echo json_encode($eventList);
-
 ?>
 
 <script>
 console.log("categorySelector.js loaded successfully!");
+
+let allEvents = <?php echo json_encode($eventList) ?>;
+let allArray
 
 let categories = document.getElementsByClassName("categoryItem");
 
@@ -74,17 +55,79 @@ for (let i = 0; i < categories.length; i++) {
   categories[i].addEventListener("click", changeCategory);
 }
 
+// Figures out the category and highlights it
 function changeCategory() {
 
   for (let i = 0; i < categories.length; i++) {
     categories[i].classList.remove("active");
   }
 
-  console.log(this);
   this.classList.add("active");
+
+  let currentCategory = this.id;
+
+  const eventContainer = document.getElementById("eventContainer");
+  eventContainer.innerHTML = "";
+
+  switch (currentCategory) {
+    case "summer":
+      console.log("Spring break bitches!");
+      eventFeedBuilder();
+      break;
+    case "food":
+      console.log("tonight, we feast!");
+      break;
+    // BUG: For some reason it always runs the default case
+    default:
+      console.log("There was an oopsie");
+  }
+
+  function eventFeedBuilder() {
+    console.log("Building string........");
+
+    for (var i = 0; i < 5; i++) {
+      eventContainer.innerHTML += '<div class="eventItem" style="background-image: url(' + "VALUE" + ');">'
+
+      // '<div class="eventItem" style="background-image: url(' + "VALUE" + ');">
+      //
+      //   <div class="eventDetailsFilter">
+      //
+      //     <div class="eventDetails">
+      //
+      //       <h2>' + "VALUE" + '</h2>
+      //
+      //       <div class="eventDate">
+      //         ' + "VALUE" + '
+      //       </div>
+      //
+      //       <div class="eventLocation">
+      //         ' + "VALUE" + '
+      //       </div>
+      //
+      //     </div>
+      //
+      //   </div>
+      //
+      // </div>';
+    }
+  }
 }
 
-let eventList = <?php echo json_encode($eventList) ?>;
-console.log(eventList);
-console.log(eventList[1].Date);
+for (var i = 0; i < allEvents.length; i++) {
+
+  switch (allEvents[i].Category_ID) {
+    case "1":
+        console.log(allEvents[i].Event_ID);
+      break;
+    case "2":
+        console.log(allEvents[i].Event_ID);
+      break;
+    case "3":
+        console.log(allEvents[i].Event_ID);
+      break;
+    default:
+      console.log("You have an unexpected category with at Event_ID: " + eventList[i].Event_ID);
+  }
+}
+
 </script>

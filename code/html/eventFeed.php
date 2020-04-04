@@ -36,7 +36,7 @@
       <p>All</p>
     </div>
 
-    <div class="categoryItem">
+    <div class="categoryItem" id="food">
       <p>Food</p>
     </div>
 
@@ -52,14 +52,14 @@
       <p>Video Games</p>
     </div>
 
-    <div class="categoryItem">
+    <div class="categoryItem" id="summer">
       <p>Summer</p>
     </div>
 
 
   </div>
 
-  <div class="eventFeed">
+  <div class="eventFeed" id="eventContainer">
 
     <?php include '../php/retrieveEvents.php'; ?>
 
@@ -94,7 +94,7 @@
     <div class="shortcutItem">
 
     </div>
-    
+
     <div class="shortcutItem">
 
     </div>
