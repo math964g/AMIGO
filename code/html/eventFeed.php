@@ -98,10 +98,10 @@
       <img src="../../assets/ico/user.svg" alt="Menu icon">
     </div>
 
+    <script src="../js/bottomBar.js"></script>
+    
   </div>
 
 </body>
 
 </html>
-
-<script src="../js/bottomBar.js"></script>

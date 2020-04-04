@@ -28,7 +28,9 @@
 
     </div>
 
-    <div class="eventPicture"></div>
+<div class="eventContainer">
+
+  <div class="eventPicture"></div>
 
   <div class="eventDetailBox">
 
@@ -61,6 +63,30 @@
     <h3>Event details</h3>
 
     <p id="eventDetailText">Jens hansen havde en bondegård i åh i åh årrrh Jens hansen havde en bondegård i åh i åh årrrh Jens hansen havde en bondegård i åh i åh årrrh Jens hansen havde en bondegård i åh i åh årrrh Jens hansen havde en bondegård i åh i åh årrrh</p>
+
+  </div>
+
+</div>
+
+  <div class="bottomBar">
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/user.svg" alt="Event icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/calender.svg" alt="Calender icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/comment.svg" alt="Chat icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/user.svg" alt="Menu icon">
+    </div>
+
+    <script src="../js/bottomBar.js"></script>
 
   </div>
 

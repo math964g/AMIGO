@@ -53,6 +53,10 @@
   filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }
 
 .topBar {
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 5;
   display: grid;
   grid-template-columns: 25% auto 25%;
   width: 100vw;
@@ -93,6 +97,10 @@
       width: 3px;
       height: 100%;
       background: #000; }
+
+.eventContainer {
+  min-height: 90vh;
+  margin-bottom: 15vh; }
 
 .eventPicture {
   display: block;

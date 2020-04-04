@@ -1,6 +1,10 @@
 @import "master.scss";
 
 .topBar {
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 5;
   display: grid;
   grid-template-columns: 25% auto 25%;
   width: 100vw;
@@ -55,6 +59,11 @@
       background: #000;
     }
   }
+}
+
+.eventContainer {
+  min-height: 90vh;
+  margin-bottom: 15vh;
 }
 
 .eventPicture {
