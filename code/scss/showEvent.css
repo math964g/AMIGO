@@ -117,6 +117,9 @@
 .participantPictures {
   grid-area: pictures;
   display: flex; }
+  .participantPictures > img {
+    max-width: 36px;
+    max-height: 36px; }
 
 .profileMini {
   margin-left: -10px; }

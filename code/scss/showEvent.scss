@@ -91,11 +91,17 @@
 
 .participantNumber {
   grid-area: parnum;
+
 }
 
 .participantPictures {
   grid-area: pictures;
   display: flex;
+
+  & > img {
+    max-width: 36px;
+    max-height: 36px;
+  }
 }
 
 .profileMini {
