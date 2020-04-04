@@ -95,10 +95,18 @@ function changeCategory() {
 // Builds the internal HTML structure inside the eventFeed, with the variables of the correct category
 function eventFeedBuilder(currentEvents) {
 
-  for (var i = 0; i < currentEvents.length; i++) {
-    eventContainer.innerHTML +=
+// Quick check to see if any events exist. If not give the user a response
+// IDEA: This could possibly be expanded with a button to encourage the user to create the first event in this category
+if (0 >= currentEvents.length) {
+  eventContainer.innerHTML += "<h3>No events under this category yet</h3><br><br>";
+}
 
-    '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + currentEvents[i].Date + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
+else {
+    for (var i = 0; i < currentEvents.length; i++) {
+      eventContainer.innerHTML +=
+
+      '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + currentEvents[i].Date + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
+    }
   }
 }
 
