@@ -46,6 +46,8 @@ if ($resultCheck > 0) {
 <script>
 console.log("categorySelector.js loaded successfully!");
 
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 // Collection of our global variables
 let allEvents = <?php echo json_encode($eventList) ?>;
 let musicEvents = [];
@@ -103,9 +105,41 @@ if (0 >= currentEvents.length) {
 
 else {
     for (var i = 0; i < currentEvents.length; i++) {
-      eventContainer.innerHTML +=
 
-      '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + currentEvents[i].Date + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
+      // This link will help you conquer the Date object
+      // https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/
+      let eventTime = new Date(currentEvents[i].Date);
+
+      let minutes = eventTime.getMinutes();
+      // console.log("Minutes: " + minutes);
+
+      if (minutes.toString().length < 2) {
+        minutes += "0";
+      }
+
+      let hours = eventTime.getHours();
+      // console.log("Hours: " + hours);
+
+      if (hours.toString().length < 2) {
+        hours = "0" + hours;
+      }
+
+      let day = eventTime.getDate();
+      // console.log("Day: " + day);
+
+      let monthIndex = eventTime.getMonth();
+      let monthName = months[monthIndex];
+      // console.log("Month: " + monthName);
+
+      let year = eventTime.getFullYear();
+      // console.log("Year: " + year);
+
+      formattedEventDate = day + ". " + monthName + "   " + hours + ":" + minutes;
+
+      // console.log(formattedEventDate);
+
+      eventContainer.innerHTML +=
+      '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + formattedEventDate + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
     }
   }
 }
