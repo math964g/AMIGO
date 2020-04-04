@@ -30,7 +30,7 @@
 
 <div class="eventContainer">
 
-  <div class="eventPicture"></div>
+  <div id="eventPicture" style="background-image: url('../../assets/event_img/amigo.jpg');"></div>
 
   <div class="eventDetailBox">
 
@@ -100,5 +100,7 @@
 let eventList = JSON.parse(sessionStorage.getItem("eventCollection"));
 
 console.log(eventList);
+
+document.getElementById("eventPicture").style.backgroundImage = "url(" + eventList.Image_Path + ")"
 
 </script>

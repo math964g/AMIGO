@@ -102,13 +102,12 @@
   min-height: 90vh;
   margin-bottom: 15vh; }
 
-.eventPicture {
+#eventPicture {
   display: block;
   height: 30vh;
   margin: 10px;
   border-radius: 20px;
-  background-size: cover;
-  background-image: url("../../assets/event_img/amigo.jpg"); }
+  background-size: cover; }
 
 .eventDetailBox {
   position: relative;
