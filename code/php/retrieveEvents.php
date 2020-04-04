@@ -20,21 +20,6 @@ if ($resultCheck > 0) {
 
     // Creates an array with all events
     $eventList[] = $row;
-
-    // Converts the time to human
-
-    // Converts the string to date format
-    $dt = strtotime($row['Date']);
-
-    $day = date("d", $dt);
-    $month = date("F", $dt);
-    $time = date("H", $dt) . ":" . date("i", $dt);
-
-    // Builds the time into a beautiful string
-    $eventDate = $day . ". " . $month . " - " . $time;
-
-
-
   }
 
   echo "</div>";

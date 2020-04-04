@@ -37,12 +37,22 @@ $Peach: #FDCE4E;
     display: block;
     width: 30px;
     height: 30px;
+
+    & > img {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   & > .shortcutItem {
     display: block;
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    width: 40px;
+    height: 40px;
   }
+}
+
+.activeMenu {
+  // To create the filter i used the below link
+  // https://codepen.io/sosuke/pen/Pjoqqp
+  filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%);
 }
