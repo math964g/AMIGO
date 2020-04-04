@@ -27,7 +27,7 @@
   background-color: #D6D6D6; }
 
 .bottomBar {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   background-color: #FFF;
   z-index: 5;
