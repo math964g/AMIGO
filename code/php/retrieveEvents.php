@@ -29,7 +29,7 @@ if ($resultCheck > 0) {
 ?>
 
 <script>
-console.log("categorySelector.js loaded successfully!");
+console.log('%c categorySelector.js loaded successfully! ', 'color: #32fa3c');
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 

@@ -100,14 +100,8 @@
 
   </div>
 
-  <script src="../js/categorySelector.js">
-
-  </script>
-
 </body>
 
 </html>
 
-<script>
-
-</script>
+<script src="../js/bottomBar.js"></script>
