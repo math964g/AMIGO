@@ -63,7 +63,7 @@
   margin: 10px;
   border-radius: 20px;
   background-size: cover;
-  background-image: url('../../assets/event_img/testpic.jpg');
+  background-image: url('../../assets/event_img/amigo.jpg');
 }
 
 .eventDetailBox {
@@ -97,6 +97,7 @@
 .participantPictures {
   grid-area: pictures;
   display: flex;
+  margin: auto auto auto 0;
 
   & > img {
     max-width: 36px;
