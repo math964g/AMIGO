@@ -34,10 +34,10 @@
 
   <div class="eventDetailBox">
 
-    <h2 class="eventHeader">Kage nede på Nelle's</h2>
+    <h2 id="eventHeader"></h2>
 
-    <div class="eventTime">
-      <p>10. April - 11:22</p>
+    <div id="eventTime">
+
     </div>
 
     <div class="eventParticipation">
@@ -101,6 +101,11 @@ let eventList = JSON.parse(sessionStorage.getItem("eventCollection"));
 
 console.log(eventList);
 
-document.getElementById("eventPicture").style.backgroundImage = "url(" + eventList.Image_Path + ")"
+document.getElementById("eventPicture").style.backgroundImage = "url(" + eventList.Image_Path + ")";
+document.getElementById("eventHeader").innerHTML = eventList.Event_Name;
+
+// BUG: The time has to be reformatted like the eventFeed - Check trello for task for this fix
+document.getElementById("eventTime").innerHTML = eventList.Date;
+document.getElementById("eventDetailText").innerHTML = eventList.Description;
 
 </script>
