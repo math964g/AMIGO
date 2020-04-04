@@ -131,10 +131,19 @@ else {
   }
 
   function goTo() {
-    let eventId = this.id;
-    console.log(eventId);
-    sessionStorage.setItem("clickEventId", eventId);
-    location.href = "http://localhost/amigo/code/php/showEvent.php";
+
+    for (var i = 0; i < allEvents.length; i++) {
+
+      // If the event_ID matches the clicked event, store the event object and ship it to showEvent.php
+      if (allEvents[i].Event_ID == this.id) {
+
+        clickedEvent = allEvents[i];
+        console.log(clickedEvent);
+
+        sessionStorage.setItem("eventCollection", JSON.stringify(clickedEvent));
+        location.href = "http://localhost/amigo/code/php/showEvent.php";
+      }
+    }
   }
 }
 

@@ -70,8 +70,9 @@
 
 <script>
 
-// Grabs the event_ID from the previous page, based on the clicked event
-let result = sessionStorage.getItem("clickEventId");
-console.log(result);
+// Retrieves the clicked event object from sessionStorage
+let eventList = JSON.parse(sessionStorage.getItem("eventCollection"));
+
+console.log(eventList);
 
 </script>
