@@ -178,6 +178,7 @@
   height: 100%;
   padding: 10px 15px 10px 15px; }
   .eventDetails > h2 {
+    font-size: 16px;
     grid-area: header;
     margin: auto 0 auto 0; }
   .eventDetails > .eventDate {

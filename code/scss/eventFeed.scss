@@ -171,6 +171,7 @@
   padding: 10px 15px 10px 15px;
 
   & > h2 {
+    font-size: 16px;
     grid-area: header;
     // Makes sure the text is centered inside the grid slot on long screens. No idea when you'd see this, but better safe than sorry.
     margin: auto 0 auto 0;

@@ -32,30 +32,21 @@
 
   <div class="categorySlider">
 
-    <div class="categoryItem active">
-      <p>All</p>
+    <div class="categoryItem active" id="all">
+      <p>Alle</p>
     </div>
 
     <div class="categoryItem" id="food">
-      <p>Food</p>
+      <p>Mad</p>
     </div>
 
-    <div class="categoryItem">
+    <div class="categoryItem" id="sport">
       <p>Sport</p>
     </div>
 
-    <div class="categoryItem">
-      <p>Music</p>
+    <div class="categoryItem" id="music">
+      <p>Musik</p>
     </div>
-
-    <div class="categoryItem">
-      <p>Video Games</p>
-    </div>
-
-    <div class="categoryItem" id="summer">
-      <p>Summer</p>
-    </div>
-
 
   </div>
 

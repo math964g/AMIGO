@@ -46,8 +46,11 @@ if ($resultCheck > 0) {
 <script>
 console.log("categorySelector.js loaded successfully!");
 
+// Collection of our global variables
 let allEvents = <?php echo json_encode($eventList) ?>;
-let allArray
+let musicEvents = [];
+let sportEvents = [];
+let foodEvents = [];
 
 let categories = document.getElementsByClassName("categoryItem");
 
@@ -69,65 +72,55 @@ function changeCategory() {
   const eventContainer = document.getElementById("eventContainer");
   eventContainer.innerHTML = "";
 
+  // Figures out which array category you need
   switch (currentCategory) {
-    case "summer":
-      console.log("Spring break bitches!");
-      eventFeedBuilder();
+    case "all":
+      eventFeedBuilder(allEvents);
+      break;
+    case "music":
+      eventFeedBuilder(musicEvents);
+      break;
+    case "sport":
+      eventFeedBuilder(sportEvents);
       break;
     case "food":
-      console.log("tonight, we feast!");
+      eventFeedBuilder(foodEvents);
       break;
     // BUG: For some reason it always runs the default case
     default:
       console.log("There was an oopsie");
   }
+}
 
-  function eventFeedBuilder() {
-    console.log("Building string........");
+// Builds the internal HTML structure inside the eventFeed, with the variables of the correct category
+function eventFeedBuilder(currentEvents) {
 
-    for (var i = 0; i < 5; i++) {
-      eventContainer.innerHTML += '<div class="eventItem" style="background-image: url(' + "VALUE" + ');">'
+  for (var i = 0; i < currentEvents.length; i++) {
+    eventContainer.innerHTML +=
 
-      // '<div class="eventItem" style="background-image: url(' + "VALUE" + ');">
-      //
-      //   <div class="eventDetailsFilter">
-      //
-      //     <div class="eventDetails">
-      //
-      //       <h2>' + "VALUE" + '</h2>
-      //
-      //       <div class="eventDate">
-      //         ' + "VALUE" + '
-      //       </div>
-      //
-      //       <div class="eventLocation">
-      //         ' + "VALUE" + '
-      //       </div>
-      //
-      //     </div>
-      //
-      //   </div>
-      //
-      // </div>';
-    }
+    '<div class="eventItem" style="background-image: url(' + currentEvents[i].Image_Path + ');"><div class="eventDetailsFilter"><div class="eventDetails"><h2>' + currentEvents[i].Event_Name + '</h2><div class="eventDate">' + currentEvents[i].Date + '</div><div class="eventLocation">' + currentEvents[i].Location + '</div></div></div></div>';
   }
 }
 
 for (var i = 0; i < allEvents.length; i++) {
 
+  // Builds category arrays
   switch (allEvents[i].Category_ID) {
     case "1":
-        console.log(allEvents[i].Event_ID);
+        musicEvents.push(allEvents[i]);
       break;
     case "2":
-        console.log(allEvents[i].Event_ID);
+        sportEvents.push(allEvents[i]);
       break;
     case "3":
-        console.log(allEvents[i].Event_ID);
+        foodEvents.push(allEvents[i]);
       break;
     default:
       console.log("You have an unexpected category with at Event_ID: " + eventList[i].Event_ID);
   }
 }
+
+// Fills the page with content on load
+eventFeedBuilder(allEvents);
 
 </script>
