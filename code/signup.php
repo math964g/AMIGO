@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="stylesheet/signup.css">
     <title>Sign Up</title>
   </head>
   <body>
@@ -27,19 +27,19 @@
         </select>
         <br>
         <br>
-        <input class="signUpMail" type="text" name="email" placeholder="Email">
+        <input type="text" name="email" placeholder="Email">
         <br>
         <br>
-        <input class="signUpPwd" type="password" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Password">
         <br>
         <br>
-        <input class="verifyPwd" type="password" name="password-repeat" placeholder="Repeat Password">
+        <input type="password" name="password-repeat" placeholder="Repeat Password">
         <br>
         <br>
         <button class="ctaButton" type="submit" name="signup-submit">Sign Up</button>
         <br>
         <br>
-        <label> Already a member? </label>
+        <label> <a class="alreadyMember" href="index.php"> Already a member? </a> </label>
       </form>
     </section>
 

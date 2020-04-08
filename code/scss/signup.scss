@@ -1,22 +1,21 @@
 @import '_basics.scss';
 @import '_variables.scss';
 
+.signUpGrid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .gridContainer {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 33% 33% 33%;
-    grid-template-columns: 33% 33% 33%;
-    justify-items: center;
-    align-items: center;
-  }
+.form {
+  grid-row-start: 2;
+  grid-column-start: 2;
 
-  .loginForm {
-    grid-row-start: 2;
-    grid-column-start: 2;
-  }
-
-  .loginForm input[type=text] {
+  & > input {
     display: flex;
     border: none;
     border-bottom: 1px solid #000000;
@@ -27,7 +26,7 @@
     font-weight: bold;
   }
 
-  .loginForm input[type=password] {
+  & > select {
     display: flex;
     border: none;
     border-bottom: 1px solid #000000;
@@ -38,20 +37,15 @@
     font-weight: bold;
   }
 
-  .loginForm button {
-    grid-column-start: 3;
+  & > label {
+  font-weight: bold;
+  font-size: 14px;
 
+   & > a {
+     color: #000000;
+   }
   }
-
-  .forgotPwd {
-    display: inline-flex;
-    margin-left: 58%;
-    font-size: 12px;
-    font-weight: bold;
-    color: #000000;
-    text-decoration: none;
-    position: absolute;
-  }
+}
 
 .ctaButton {
   width: 50vw;
@@ -61,5 +55,4 @@
   border-radius: 30vw;
   border-style: none;
   font-weight: bold;
-  z-index: -1;
 }
