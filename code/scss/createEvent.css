@@ -195,4 +195,10 @@ textarea {
     .selectCategory > select > option {
       outline: none; }
 
+.ctaButton {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px; }
+
 /*# sourceMappingURL=createEvent.css.map */
