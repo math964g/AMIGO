@@ -2,6 +2,107 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/createEvent.css">
+    <title>Show event</title>
+  </head>
+  <body>
+
+    <div class="topBar">
+
+      <div class="returnButton">
+
+        <div class="returnArrow"></div>
+
+      </div>
+
+      <h1>AMIGO</h1>
+
+      <div class="editEvent">
+
+        <div class="lineVertical"></div>
+        <div class="lineHorizontal"></div>
+
+      </div>
+
+    </div>
+
+<div class="eventContainer">
+
+  <div id="eventPicture" style="background-image: url('../../assets/event_img/amigo.jpg');"></div>
+
+  <div class="eventDetailBox">
+
+    <form action="createEvent.php" method="post">
+      <label for="eventName">Event name: </label>
+      <br>
+      <input type="text" id="eventName" name="eventName" size="32" />
+      <br>
+
+      <label for="eventDate">Date: </label>
+      <br>
+      <input type="datetime-local" id="eventDate" name="eventDate" size="32" />
+      <br>
+
+      <label for="eventLocation">Location: </label>
+      <br>
+      <input type="text" id="eventLocation" name="eventLocation" size="32" />
+      <br>
+
+
+      <div class="selectCategory">
+        <label for="">Select category:</label>
+        <br>
+        <select id="selectedCategory" name="category">
+          <option value="1">Sport</option>
+          <option value="2">Music</option>
+          <option value="3">Food</option>
+        </select>
+      </div>
+
+      <label for="eventDescription">Description: </label>
+      <br>
+      <textarea type="text" id="eventDescription" name="eventDescription" size="32" /></textarea>
+      <br>
+
+      <input type="submit" name="submit" value="Send" />
+    </form>
+
+  </div>
+
+</div>
+
+  <div class="bottomBar">
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/user.svg" alt="Event icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/calender.svg" alt="Calender icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/comment.svg" alt="Chat icon">
+    </div>
+
+    <div class="shortcutItem">
+      <img src="../../assets/ico/user.svg" alt="Menu icon">
+    </div>
+
+    <script src="../js/bottomBar.js"></script>
+
+  </div>
+
+  </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
     <title>New event</title>
   </head>
   <body>
@@ -76,4 +177,4 @@ $conn->close();
 ?>
 
   </body>
-</html>
+</html> -->
