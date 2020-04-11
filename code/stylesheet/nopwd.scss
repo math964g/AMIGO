@@ -1,0 +1,42 @@
+@import '_basics.scss';
+@import '_variables.scss';
+
+.pwdGrid{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.nopwd{
+  grid-column-start: 2;
+  grid-row-start: 2;
+
+
+  & > input {
+    width: 80vw;
+    opacity: 50%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.loginbtn {
+  grid-row-start: 3;
+  grid-column-start: 2;
+
+  & > .ctaButton {
+    width: 50vw;
+    height: 10vw;
+    background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+    color: #FFFFFF;
+    border-radius: 30vw;
+    border-style: none;
+    font-weight: bold;
+  }
+}

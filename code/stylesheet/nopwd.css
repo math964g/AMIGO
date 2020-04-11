@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none; }
+
+.pwdGrid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center; }
+
+.nopwd {
+  grid-column-start: 2;
+  grid-row-start: 2; }
+  .nopwd > input {
+    width: 80vw;
+    opacity: 50%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold; }
+
+.loginbtn {
+  grid-row-start: 3;
+  grid-column-start: 2; }
+  .loginbtn > .ctaButton {
+    width: 50vw;
+    height: 10vw;
+    background: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%);
+    color: #FFFFFF;
+    border-radius: 30vw;
+    border-style: none;
+    font-weight: bold; }
+
+/*# sourceMappingURL=nopwd.css.map */
