@@ -52,7 +52,7 @@
 
 
 
-      <!-- <div class="selectCategory">
+      <div class="selectCategory">
         <label for="">Select category:</label>
         <select id="selectedCategory" name="category">
           <option value="none">Select a category</option>
@@ -60,11 +60,11 @@
           <option value="2">Music</option>
           <option value="3">Food</option>
         </select>
-      </div> -->
+      </div>
 
-      <input type="radio" name="selectedCategory" value="1"> Sport
-      <input type="radio" name="selectedCategory" value="2">  Music
-      <input type="radio" name="selectedCategory" value="3">  Food
+      <!-- <input type="radio" name="selectedCategory" value="1"> Sport -->
+      <!-- <input type="radio" name="selectedCategory" value="2">  Music -->
+      <!-- <input type="radio" name="selectedCategory" value="3">  Food -->
 
 
 
@@ -85,7 +85,7 @@
   <div class="bottomBar">
 
     <div class="shortcutItem">
-      <img src="../../assets/ico/user.svg" alt="Event icon">
+      <img src="../../assets/ico/event-banner.svg" alt="Event icon">
     </div>
 
     <div class="shortcutItem">

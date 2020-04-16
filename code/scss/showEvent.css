@@ -46,8 +46,8 @@
       width: 100%; }
   .bottomBar > .shortcutItem {
     display: block;
-    width: 40px;
-    height: 40px; }
+    width: 30px;
+    height: 30px; }
 
 .activeMenu {
   filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }
