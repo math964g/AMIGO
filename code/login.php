@@ -11,16 +11,16 @@
 
     <section class="loginGrid">
 
-      <form class="loginInfo" action="includes/login.includes.php" method="post">
-        <input type="text" name="email" placeholder="Email">
+      <form id="linfo" class="loginInfo" action="includes/login.includes.php" method="post">
+        <input type="text" name="Email" placeholder="Email">
         <br><br>
-        <input type="password" name="password" placeholder="password">
+        <input type="password" name="Password" placeholder="password">
         <br> <br>
-        <label> <a class="forgotPassword" href="signup.php"> Forgotten password? </a> </label>
+        <label> <a class="forgotPassword" href="forgotpwd.php"> Forgotten password? </a> </label>
       </form>
 
-      <form class="loginbtn" action="signup.php" method="post">
-        <button class="ctaButton" type="submit" name="submit">Log In</button>
+      <form class="loginbtn" action="includes/login.includes.php" method="post">
+        <button form="linfo" class="ctaButton" type="submit" name="submit">Log In</button>
         <br> <br>
         <label> <a class="notSignedUp" href="signup.php"> Don't have an account yet? </a> </label>
       </form>
