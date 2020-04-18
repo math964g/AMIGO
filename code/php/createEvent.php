@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/createEvent.css">
-    <title>Show event</title>
+    <title>Create event</title>
   </head>
   <body>
 
@@ -82,27 +82,7 @@
 
 </div>
 
-  <div class="bottomBar">
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/event-banner.svg" alt="Event icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/calender.svg" alt="Calender icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/comment.svg" alt="Chat icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/user.svg" alt="Menu icon">
-    </div>
-
-    <script src="../js/bottomBar.js"></script>
-
-  </div>
+  <?php include 'bottomBar.php'; ?>
 
   </body>
 </html>
