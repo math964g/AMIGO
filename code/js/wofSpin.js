@@ -9,12 +9,14 @@ let spinner = null;
 
 spinButton.addEventListener("click", spinMe);
 
+// Function which calls for a spin
 function spinMe() {
   console.log("Spin to win bois");
   // Defining our variable to the interval we want to handle
   spinner = setInterval(spinDegree, 10);
 }
 
+// Handles the spinning part
 function spinDegree() {
   if (rotation >= 360) {
     // Using the spinner variable, we handle the setInterval inside the spinMe function
