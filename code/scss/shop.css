@@ -51,3 +51,51 @@
 
 .activeMenu {
   filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }
+
+.topBar {
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  width: 100vw;
+  height: 10vh; }
+  .topBar > div {
+    margin: auto; }
+  .topBar > .returnButton {
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .topBar > .returnButton > .returnArrow {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%, -50%) rotate(135deg);
+      height: 50%;
+      border: solid #000;
+      border-width: 0 3px 3px 0;
+      padding: 3px; }
+  .topBar > h1 {
+    color: #000;
+    margin: auto; }
+
+.wof_container {
+  position: relative;
+  margin: 20% auto auto auto;
+  width: 70vw;
+  height: 70vw;
+  background-color: blue; }
+
+.wof {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: green; }
+
+.ctaButton {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20%; }
