@@ -11,9 +11,16 @@ spinButton.addEventListener("click", spinMe);
 
 // Function which calls for a spin
 function spinMe() {
+  
+  // ----------------------------------------------------------
+  // Makes it so you can only click the button once
+  // IDEA: This should be remove later, when a check is implemented to see if the user is elgible for a spin
+  spinButton.removeEventListener("click", spinMe);
+  // ----------------------------------------------------------
+
   console.log("Spin to win bois");
-  // Defining our variable to the interval we want to handle
-  spinner = setInterval(spinDegree, 10);
+  // Defining our variable to the interval we want to handle - Number is speed
+  spinner = setInterval(spinDegree, 1);
 }
 
 // Handles the spinning part
