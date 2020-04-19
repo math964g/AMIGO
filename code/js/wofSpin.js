@@ -18,7 +18,7 @@ function spinMe() {
   // ----------------------------------------------------------
   // Makes it so you can only click the button once
   // IDEA: This should be remove later, when a check is implemented to see if the user is elgible for a spin
-  // spinButton.removeEventListener("click", spinMe);
+  spinButton.removeEventListener("click", spinMe);
   // ----------------------------------------------------------
 
   console.log("Spin to win bois");
