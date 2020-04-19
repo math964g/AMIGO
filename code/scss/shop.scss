@@ -1,0 +1,111 @@
+@import "master.scss";
+
+.topBar {
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  width: 100vw;
+  height: 10vh;
+
+  & > div {
+    margin: auto;
+  }
+
+  & > .returnButton {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    & > .returnArrow {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%, -50%) rotate(135deg);
+      height: 50%;
+      border: solid #000;
+      border-width: 0 3px 3px 0;
+      padding: 3px;
+    }
+  }
+
+  & > h1 {
+    color: #000;
+    margin: auto;
+  }
+}
+
+.wof_container {
+  position: relative;
+  margin: 20% auto auto auto;
+  width: 70vw;
+  height: 70vw;
+}
+
+// Examples of how to sector circle, might need this later - https://stackoverflow.com/questions/21205652/how-to-draw-a-circle-sector-in-css
+.wof {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 6px;
+  // Makes it a circle
+  border-radius: 50%;
+  // Cuts the sectors to pieces
+  overflow: hidden;
+
+  & > .middle {
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    background-color: black;
+  }
+
+  & > .sector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 3px;
+  }
+
+  & > .one {
+    transform: translate(-50%, -50%);
+    // transform: skew(15deg, 15deg);
+    background-color: $Red;
+  }
+
+  & > .two {
+    transform: translate(50%, -50%);
+    // transform: skew(15deg, 15deg);
+    background-color: $Peach;
+  }
+
+  & > .three {
+    transform: translate(-50%, 50%);
+    // transform: skew(15deg, 15deg);
+    background-color: $Peach;
+  }
+
+  & > .four {
+    transform: translate(50%, 50%);
+    // transform: skew(15deg, 15deg);
+    background-color: $Red;
+  }
+}
+
+
+.ctaButton {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20%;
+}

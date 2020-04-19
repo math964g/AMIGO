@@ -80,79 +80,52 @@
   .topBar > h1 {
     color: #000;
     margin: auto; }
-  .topBar > .editEvent {
-    display: block;
-    width: 30px;
-    height: 30px; }
-    .topBar > .editEvent > .lineVertical {
-      position: relative;
-      transform: translateY(-50%);
-      width: 100%;
-      height: 3px;
-      background-color: #000; }
-    .topBar > .editEvent > .lineHorizontal {
-      position: relative;
-      top: -3px;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 100%;
-      background: #000; }
 
-.eventContainer {
-  min-height: 90vh;
-  margin-bottom: 15vh; }
-
-#eventPicture {
-  display: block;
-  height: 30vh;
-  margin: 10px;
-  border-radius: 20px;
-  background-size: cover; }
-
-.eventDetailBox {
+.wof_container {
   position: relative;
-  margin: 50px auto auto auto;
-  width: 80vw; }
+  margin: 20% auto auto auto;
+  width: 70vw;
+  height: 70vw; }
 
-#eventTime {
-  margin: 5px 0 10% 0; }
-
-.eventParticipation {
+.wof {
   position: relative;
-  display: grid;
-  grid-template-areas: 'parnum parnum parnum parnum parnum' 'pictures show . . cta';
-  grid-column-gap: 5px;
-  grid-row-gap: 10px; }
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 6px;
+  border-radius: 50%;
+  overflow: hidden; }
+  .wof > .middle {
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    background-color: black; }
+  .wof > .sector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-width: 3px; }
+  .wof > .one {
+    transform: translate(-50%, -50%);
+    background-color: #DE7F43; }
+  .wof > .two {
+    transform: translate(50%, -50%);
+    background-color: #FDCE4E; }
+  .wof > .three {
+    transform: translate(-50%, 50%);
+    background-color: #FDCE4E; }
+  .wof > .four {
+    transform: translate(50%, 50%);
+    background-color: #DE7F43; }
 
-.participantNumber {
-  grid-area: parnum; }
-
-.participantPictures {
-  grid-area: pictures;
-  display: flex;
-  margin: auto auto auto 0; }
-  .participantPictures > img {
-    max-width: 36px;
-    max-height: 36px; }
-
-.profileMini {
-  margin-left: -10px; }
-
-.showMore {
-  grid-area: show;
-  margin: auto 0; }
-
-#joinBtn {
-  width: 75px;
-  grid-area: cta;
-  margin: auto; }
-
-#borderline {
+.ctaButton {
   position: relative;
-  margin: 20px 0 20px 0;
-  border: solid #F2F2F2;
-  border-width: 0 0 3px 0;
-  padding: 2px; }
-
-#eventDetailText {
-  margin: 10px 0 0 0; }
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20%; }

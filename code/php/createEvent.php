@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/createEvent.css">
-    <title>Show event</title>
+    <title>Create event</title>
   </head>
   <body>
 
@@ -52,7 +52,7 @@
 
 
 
-      <!-- <div class="selectCategory">
+      <div class="selectCategory">
         <label for="">Select category:</label>
         <select id="selectedCategory" name="category">
           <option value="none">Select a category</option>
@@ -60,11 +60,11 @@
           <option value="2">Music</option>
           <option value="3">Food</option>
         </select>
-      </div> -->
+      </div>
 
-      <input type="radio" name="selectedCategory" value="1"> Sport
-      <input type="radio" name="selectedCategory" value="2">  Music
-      <input type="radio" name="selectedCategory" value="3">  Food
+      <!-- <input type="radio" name="selectedCategory" value="1"> Sport -->
+      <!-- <input type="radio" name="selectedCategory" value="2">  Music -->
+      <!-- <input type="radio" name="selectedCategory" value="3">  Food -->
 
 
 
@@ -82,27 +82,7 @@
 
 </div>
 
-  <div class="bottomBar">
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/user.svg" alt="Event icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/calender.svg" alt="Calender icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/comment.svg" alt="Chat icon">
-    </div>
-
-    <div class="shortcutItem">
-      <img src="../../assets/ico/user.svg" alt="Menu icon">
-    </div>
-
-    <script src="../js/bottomBar.js"></script>
-
-  </div>
+  <?php include 'bottomBar.php'; ?>
 
   </body>
 </html>
