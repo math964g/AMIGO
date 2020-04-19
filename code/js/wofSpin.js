@@ -13,7 +13,7 @@ spinButton.addEventListener("click", spinMe);
 
 // Function which calls for a spin
 function spinMe() {
-  spinStop = Math.floor(Math.random() * 1080) + 360;
+  spinStop = Math.floor(Math.random() * 361);
 
   // ----------------------------------------------------------
   // Makes it so you can only click the button once
@@ -36,6 +36,27 @@ function spinDegree() {
   if (rotation >= spinStop) {
     // Using the spinner variable, we handle the setInterval inside the spinMe function
     clearInterval(spinner);
+
+    if (rotation >= 0 && rotation <= 90) {
+      console.log("You won 60 tickets");
+    }
+
+    else if (rotation >= 90 && rotation <= 180) {
+      console.log("You won 200 tickets");
+    }
+
+    else if (rotation >= 180 && rotation <= 270) {
+      console.log("You won 20 tickets");
+    }
+
+    else if (rotation >= 270 && rotation <= 360) {
+      console.log("You won 40 tickets");
+    }
+
+    else {
+      console.log("Unexpected error");
+    }
+
     rotation = 0;
   }
 }
