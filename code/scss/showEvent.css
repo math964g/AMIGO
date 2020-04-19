@@ -48,20 +48,61 @@
     display: block;
     width: 30px;
     height: 30px; }
-  .bottomBar > #sideMenu > .line {
-    position: relative;
-    width: 30px;
-    height: 4px;
-    background-color: black; }
-  .bottomBar > #sideMenu > .one {
-    margin-top: 2px; }
-  .bottomBar > #sideMenu > .two {
-    margin-top: 7px; }
-  .bottomBar > #sideMenu > .three {
-    margin-top: 7px; }
+    .bottomBar > .shortcutItem > .line {
+      position: relative;
+      width: 30px;
+      height: 4px;
+      background-color: black; }
+    .bottomBar > .shortcutItem > .one {
+      margin-top: 2px; }
+    .bottomBar > .shortcutItem > .two {
+      margin-top: 7px; }
+    .bottomBar > .shortcutItem > .three {
+      margin-top: 7px; }
 
 .activeMenu {
   filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }
+
+#grey_overlay {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  filter: opacity(0%);
+  pointer-events: none;
+  transition: 0.5s; }
+
+.filterActive {
+  filter: opacity(50%) !important; }
+
+#sideMenu {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  right: 0vw;
+  border-radius: 20vw 0vw 0vw 20vw;
+  width: 80vw;
+  height: 100vh;
+  background-color: cyan;
+  transition: 0.5s;
+  transform: translateX(100%);
+  pointer-events: all; }
+
+.navActive {
+  transform: translateX(0%) !important; }
+
+.burgerMenu_container {
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; }
 
 .topBar {
   position: sticky;

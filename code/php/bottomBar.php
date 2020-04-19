@@ -12,7 +12,7 @@
     <img src="../../assets/ico/comment.svg" alt="Chat icon">
   </div>
 
-  <div id="sideMenu" class="shortcutItem">
+  <div id="burgerMenu" class="shortcutItem">
     <div class="line one"></div>
     <div class="line two"></div>
     <div class="line three"></div>
@@ -20,4 +20,14 @@
 
   <script src="../js/bottomBar.js"></script>
 
+</div>
+
+<div id="grey_overlay"></div>
+
+<div class="burgerMenu_container">
+  <div id="sideMenu">
+    <div class="content_container">
+
+    </div>
+  </div>
 </div>
