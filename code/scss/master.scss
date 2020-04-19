@@ -51,6 +51,28 @@ $Peach: #FDCE4E;
     width: 30px;
     height: 30px;
   }
+
+  & > #sideMenu {
+
+    & > .line {
+      position: relative;
+      width: 30px;
+      height: 4px;
+      background-color: black;
+    }
+
+    & > .one {
+      margin-top: 2px;
+    }
+
+    & > .two {
+      margin-top: 7px;
+    }
+
+    & > .three {
+      margin-top: 7px;
+    }
+  }
 }
 
 .activeMenu {

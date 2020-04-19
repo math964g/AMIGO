@@ -48,6 +48,17 @@
     display: block;
     width: 30px;
     height: 30px; }
+  .bottomBar > #sideMenu > .line {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background-color: black; }
+  .bottomBar > #sideMenu > .one {
+    margin-top: 2px; }
+  .bottomBar > #sideMenu > .two {
+    margin-top: 7px; }
+  .bottomBar > #sideMenu > .three {
+    margin-top: 7px; }
 
 .activeMenu {
   filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }

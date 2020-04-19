@@ -12,8 +12,10 @@
     <img src="../../assets/ico/comment.svg" alt="Chat icon">
   </div>
 
-  <div class="shortcutItem">
-    <img src="../../assets/ico/user.svg" alt="Menu icon">
+  <div id="sideMenu" class="shortcutItem">
+    <div class="line one"></div>
+    <div class="line two"></div>
+    <div class="line three"></div>
   </div>
 
   <script src="../js/bottomBar.js"></script>
