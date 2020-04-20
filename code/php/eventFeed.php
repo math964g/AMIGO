@@ -56,7 +56,7 @@
 
   </div>
 
-  <div class="footerBar">
+  <!-- <div class="footerBar">
 
     <div class="footerColumn">
 
@@ -76,7 +76,7 @@
       <p>Contact</p>
       <p>Feedback</p>
 
-    </div>
+    </div> -->
 
   </div>
 
