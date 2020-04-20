@@ -69,6 +69,7 @@
       <div class="line"></div>
 
       <div class="settings">
+        <p>Contact</p>
         <p>Settings</p>
         <p>Log out</p>
       </div>
