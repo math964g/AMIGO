@@ -69,8 +69,8 @@
       <div class="line"></div>
 
       <div class="settings">
-        <h4>Settings</h4>
-        <h4>Log out</h4>
+        <p>Settings</p>
+        <p>Log out</p>
       </div>
 
     </div>

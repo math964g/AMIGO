@@ -135,7 +135,7 @@ $Peach: #FDCE4E;
   "settings";
   width: 75%;
   height: 75%;
-  margin: 15%;
+  margin: 25% auto;
 }
 
 .profile {
@@ -146,6 +146,19 @@ $Peach: #FDCE4E;
   & > img {
     width: 50px;
     height: 50px;
+  }
+
+  & > .profile_info {
+    display: flex;
+    flex-direction: column;
+
+    & > h4 {
+      margin: 2px 15px 2px 15px;
+    }
+
+    & > p {
+      margin: 2px 15px;
+    }
   }
 }
 
@@ -170,6 +183,12 @@ $Peach: #FDCE4E;
 
 .settings {
   grid-area: "settings";
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    margin: 5px 0px;
+  }
 }
 
 .line {
