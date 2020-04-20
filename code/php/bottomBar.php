@@ -1,3 +1,5 @@
+<div id="grey_overlay"></div>
+
 <div class="bottomBar">
 
   <div class="shortcutItem">
@@ -22,12 +24,58 @@
 
 </div>
 
-<div id="grey_overlay"></div>
 
 <div class="burgerMenu_container">
   <div id="sideMenu">
     <div class="content_container">
 
+      <div class="profile">
+        <img src="../../assets/profile_pic/2.png" alt="">
+        <div class="profile_info">
+          <h4>Caroline Hansen</h4>
+          <p>Tickets: 600</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="options">
+        <div class="menuPoint">
+          <img src="../../assets/ico/loupe.svg" alt="">
+          <h3>Find AMIGO</h3>
+        </div>
+        <div class="menuPoint">
+          <img src="../../assets/ico/calender.svg" alt="">
+          <h3>Create event</h3>
+        </div>
+        <div class="menuPoint">
+          <img src="../../assets/ico/friends.svg" alt="">
+          <h3>Things todo</h3>
+        </div>
+        <div class="menuPoint">
+          <img src="../../assets/ico/wheel.svg" alt="">
+          <h3>Lykkehjulet</h3>
+        </div>
+        <div class="menuPoint">
+          <img src="../../assets/ico/medal.svg" alt="">
+          <h3>Rewards</h3>
+        </div>
+        <div class="menuPoint">
+          <img src="../../assets/ico/user.svg" alt="">
+          <h3>Profile</h3>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="settings">
+        <h4>Settings</h4>
+        <h4>Log out</h4>
+      </div>
+
     </div>
   </div>
 </div>
+
+<!-- DELETE: For testing only -->
+<script>toggleNav();</script>

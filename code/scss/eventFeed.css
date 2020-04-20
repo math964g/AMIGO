@@ -28,6 +28,7 @@
   margin-bottom: 10vh; }
 
 .bottomBar {
+  z-index: 6;
   position: fixed;
   bottom: 0;
   background-color: #FFF;
@@ -76,17 +77,17 @@
   transition: 0.5s; }
 
 .filterActive {
-  filter: opacity(50%) !important; }
+  filter: opacity(20%) !important; }
 
 #sideMenu {
   z-index: 6;
   position: absolute;
   top: 0;
   right: 0vw;
-  border-radius: 20vw 0vw 0vw 20vw;
+  border-radius: 5vw 0vw 0vw 5vw;
   width: 80vw;
-  height: 100vh;
-  background-color: cyan;
+  height: 90vh;
+  background-color: #FFF;
   transition: 0.5s;
   transform: translateX(100%);
   pointer-events: all; }
@@ -103,6 +104,41 @@
   height: 100vh;
   overflow: hidden;
   pointer-events: none; }
+
+.content_container {
+  display: grid;
+  grid-template-areas: "profile", "line", "options", "line", "settings";
+  width: 75%;
+  height: 75%;
+  margin: 15%; }
+
+.profile {
+  grid-area: "profile";
+  display: flex;
+  flex-direction: row; }
+  .profile > img {
+    width: 50px;
+    height: 50px; }
+
+.options {
+  grid-area: "options"; }
+  .options > .menuPoint {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto; }
+    .options > .menuPoint > img {
+      width: 1.4em;
+      height: 1.4em; }
+    .options > .menuPoint > h3 {
+      margin: auto auto auto 15px; }
+
+.settings {
+  grid-area: "settings"; }
+
+.line {
+  grid-area: "line";
+  height: 5px;
+  background-color: #f2f2f2; }
 
 .categoryButton {
   width: 30vw;
