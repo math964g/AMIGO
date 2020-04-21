@@ -79,4 +79,4 @@
 </div>
 
 <!-- DELETE: For testing only -->
-<script>toggleNav();</script>
+<!-- <script>toggleNav();</script> -->

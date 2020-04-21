@@ -1,7 +1,7 @@
+@import "_reset.scss";
 $Red: #DE7F43;
 $Orange: #E6B860;
 $Peach: #FDCE4E;
-@import "_reset.scss";
 
 .ctaButton {
   width: 150px;
@@ -100,7 +100,7 @@ $Peach: #FDCE4E;
   z-index: 6;
   position: absolute;
   top: 0;
-  right: 0vw;
+  right: 0;
   border-radius: 5vw 0vw 0vw 5vw;
   width: 80vw;
   height: 90vh;
