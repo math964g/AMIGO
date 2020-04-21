@@ -1,3 +1,4 @@
+<?php // print_r($_POST); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -54,21 +55,13 @@
 
       <div class="selectCategory">
         <label for="">Select category:</label>
-        <select id="selectedCategory" name="category">
+        <select id="selectedCategory" name="selectedCategory">
           <option value="none">Select a category</option>
           <option value="1">Sport</option>
           <option value="2">Music</option>
           <option value="3">Food</option>
         </select>
       </div>
-
-      <!-- <input type="radio" name="selectedCategory" value="1"> Sport -->
-      <!-- <input type="radio" name="selectedCategory" value="2">  Music -->
-      <!-- <input type="radio" name="selectedCategory" value="3">  Food -->
-
-
-
-
 
       <label for="eventDescription">Description: </label>
       <br>
@@ -84,9 +77,6 @@
 
   <?php include 'bottomBar.php'; ?>
 
-  </body>
-</html>
-
 <?php
 
   $ownerEmail = 'john@lennon.com';
@@ -100,6 +90,8 @@
     $eventDate = $_POST["eventDate"];
     $eventLocation = $_POST["eventLocation"];
     $selectedCategory = $_POST["selectedCategory"];
+
+    // print_r($_POST);
 
     if ($eventName != "" && $eventDescription != "" && $eventDate != "" && $eventLocation != "" && $selectedCategory != "") {
 
@@ -130,4 +122,4 @@ $conn->close();
 ?>
 
   </body>
-</html> -->
+</html>
