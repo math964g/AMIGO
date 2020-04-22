@@ -84,7 +84,7 @@
   // TODO: Use the session owner email instead
   // $ownerEmail = 'john@lennon.com';
 
-  $ownerEmail = $_SESSOIN["name"];
+  $ownerEmail = $_SESSION["name"];
 
   require 'dbConnect.php';
 
