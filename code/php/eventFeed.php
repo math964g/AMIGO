@@ -21,7 +21,7 @@
 
     <h1>AMIGO</h1>
 
-    <div class="addEvent">
+    <div onclick="window.location.href='createEvent.php'" class="addEvent">
 
       <div class="lineVertical"></div>
       <div class="lineHorizontal"></div>

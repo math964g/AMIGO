@@ -3,7 +3,7 @@
 <div class="bottomBar">
 
   <div class="shortcutItem">
-    <img src="../../assets/ico/user.svg" alt="Event icon">
+    <img src="../../assets/ico/flag.svg" alt="Event icon">
   </div>
 
   <div class="shortcutItem">

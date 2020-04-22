@@ -1,3 +1,4 @@
+<!-- TODO: Delete before turning in - but keep it for use in later projects -->
 <?php // print_r($_POST); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -75,13 +76,15 @@
 
 </div>
 
-  <?php include 'bottomBar.php'; ?>
+<?php include 'bottomBar.php'; ?>
 
 <?php
 
-  // TODO: File img upload - https://www.w3schools.com/php/php_file_upload.asp 
+  // TODO: File img upload - https://www.w3schools.com/php/php_file_upload.asp
   // TODO: Use the session owner email instead
-  $ownerEmail = 'john@lennon.com';
+  // $ownerEmail = 'john@lennon.com';
+
+  $ownerEmail = $_SESSOIN["name"];
 
   require 'dbConnect.php';
 
