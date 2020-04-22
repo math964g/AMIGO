@@ -82,7 +82,9 @@
 
   // TODO: File img upload - https://www.w3schools.com/php/php_file_upload.asp
   // TODO: Use the session owner email instead
-  $ownerEmail = 'john@lennon.com';
+  // $ownerEmail = 'john@lennon.com';
+
+  $ownerEmail = $_SESSOIN["name"];
 
   require 'dbConnect.php';
 
