@@ -1,6 +1,8 @@
 @import '_basics.scss';
 @import '_variables.scss';
-
+$Red: #DE7F43;
+$Orange: #E6B860;
+$Peach: #FDCE4E;
 .loginGrid {
   height: 100vh;
   display: grid;
@@ -43,7 +45,7 @@
   & > .ctaButton {
     width: 50vw;
     height: 10vw;
-    background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);
+    background: linear-gradient(90deg, $Red 0%, $Orange 75%, $Peach 100%);
     color: #FFFFFF;
     border-radius: 30vw;
     border-style: none;
