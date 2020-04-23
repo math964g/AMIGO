@@ -75,16 +75,18 @@
   </div>
 
 </div>
-
+<?php session_start(); ?>
 <?php include 'bottomBar.php'; ?>
 
 <?php
 
   // TODO: File img upload - https://www.w3schools.com/php/php_file_upload.asp
   // TODO: Use the session owner email instead
-  // $ownerEmail = 'john@lennon.com';
+  // $ownerEmail = 'karen@donald.com';
 
-  $ownerEmail = $_SESSOIN["name"];
+  $ownerEmail = $_SESSION['name'];
+
+  // print_r($ownerEmail);
 
   require 'dbConnect.php';
 
