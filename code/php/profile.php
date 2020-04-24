@@ -4,7 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="../scss/profile.css">
+    <script src="../js/profile.js"></script>
     <title>Profile Page</title>
+    <script
+			  src="https://code.jquery.com/jquery-3.5.0.min.js"
+			  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+			  crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -14,9 +19,21 @@
         <h1>My Profile</h1>
       </article>
 
-      <article class="profileImg">
-        <img src="../../assets/profile_pic/5.png" alt="profileImgPlaceholder">
-      </article>
+      <article class="avatar-upload">
+
+        <div class="avatar-edit">
+           <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+           <label for="imageUpload"></label>
+        </div>
+
+
+       <div class="avatar-preview">
+           <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+           </div>
+       </div>
+
+     </article>
+
 
       <article class="nameNEducation">
         <h2>Name</h2>
