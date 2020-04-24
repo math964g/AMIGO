@@ -39,7 +39,7 @@
         <button class="ctaButton" type="submit" name="signup-submit">Sign Up</button>
         <br>
         <br>
-        <label> <a class="alreadyMember" href="index.php"> Already a member? </a> </label>
+        <label> <a class="alreadyMember" href="login.php"> Already a member? </a> </label>
       </form>
     </section>
 
