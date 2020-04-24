@@ -76,7 +76,19 @@
           $newPwdHash = password_hash($password, PASSWORD_DEFAULT);
           mysqli_stmt_bind_param($stmt, "ss", $newPwdHash, $tokenEmail);
           mysqli_stmt_execute($stmt);
-          header("Location../login.php?newPwd=PasswordUpdated");
+
+
+
+          $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
+          $stmt = mysqli_stmt_init($conn);
+          if(!mysqli_stmt_prepare($stmt, $sql)) {
+            echo "There was an error!";
+            exit();
+          } else {
+            mysqli_stmt_bind_param($stmt, "s", $userEmail);
+            mysqli_stmt_execute($stmt);
+            header("Location../login.php?newPwd=PasswordUpdated");
+              }
             }
           }
         }
