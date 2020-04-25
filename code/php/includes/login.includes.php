@@ -30,7 +30,7 @@
 
 
 	  if ($_POST['Password'] === $Password) {
-    header("Location: ../php/eventFeed.php");
+    header("Location: ../eventFeed.php");
 	 }
 
    else {

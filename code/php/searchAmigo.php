@@ -29,7 +29,9 @@
     <p>Searching for Amigos...</p>
   </div>
 
+  <?php session_start(); ?>
   <?php include 'bottomBar.php'; ?>
+  <?php include 'matchingAlgorithm.php' ?>
 
 </body>
 
