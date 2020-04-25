@@ -19,7 +19,8 @@ if ($resultCheck > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     $i = 1;
     $userInformation[0] = $row['Email'];
-    $userInformation[$i] = $row['Interest_ID'];
+    array_push($userInformation, $row['Interest_ID']);
+    // $userInformation[$i] = $row['Interest_ID'];
     $i + $i;
     echo $i;
   }
