@@ -44,35 +44,45 @@
   left: 50%;
   transform: translate(-50%, -50%);
   height: 300px;
-  width: 300px;
+  width: 75vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-.pulseBall {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  animation: pulse 3s infinite;
+  & > .pulseBall {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: pulse 3s infinite;
 
-  & > img {
-    width: 100%;
-    height: 100%;
-    // Centers and creates distance from edges
-    padding: 10%;
+    & > img {
+      width: 100%;
+      height: 100%;
+      // Centers and creates distance from edges
+      padding: 10%;
+    }
+  }
+
+  & > p {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
   }
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(99, 81, 31, 0.7);
+    // Yellow pulse
+    // box-shadow: 0 0 0 0 rgba(242, 236, 54, 0.7);
+    // Red pulse
+    box-shadow: 0 0 0 0px rgba(233, 107, 61, 0.7);
   }
 
   50% {
     transform: scale(1.1);
-    box-shadow: 0 0 0 50px rgba(99, 81, 31, 0);
+    box-shadow: 0 0 0 50px rgba(233, 107, 61, 0);
   }
 
   100% {

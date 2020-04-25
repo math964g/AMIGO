@@ -26,6 +26,7 @@
     <div class="pulseBall">
       <img src="../../assets/ico/logo2.svg" alt="">
     </div>
+    <p>Searching for Amigos...</p>
   </div>
 
   <?php include 'bottomBar.php'; ?>
