@@ -22,7 +22,7 @@
       <article class="avatar-upload">
 
         <div class="avatar-edit">
-           <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+           <input id="imageUpload" type='file' accept=".png, .jpg, .jpeg" />
            <label for="imageUpload"></label>
         </div>
 
@@ -42,13 +42,21 @@
       </article>
 
       <article class="interest">
-        <select class="selectInterest" name="interest">
-          <option value="placeholder">Chose interest</option>
-          <option value="football">Football</option>
-          <option value="computer">Computer</option>
-          <option value="dancing">Dancing</option>
-          <option value="party">Partying</option>
-        </select>
+        <form id="interestForm" action="profile.includes.php" method="post">
+          <select class="selectInterest" name="interest">
+            <option value="placeholder">Chose interest</option>
+            <option value="football">Football</option>
+            <option value="computer">Computer</option>
+            <option value="dancing">Dancing</option>
+            <option value="party">Partying</option>
+          </select>
+        </form>
+
+        <form action="index.html" method="post">
+          <button form="interestForm" type="submit" name="add-interest">+</button>
+        </form>
+
+
       </article>
 
     </section>
