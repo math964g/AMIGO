@@ -24,7 +24,7 @@
 
   <div class="center_container">
     <div class="pulseBall">
-      <img src="../../assets/ico/user.svg" alt="">
+      <img src="../../assets/ico/logo2.svg" alt="">
     </div>
   </div>
 
