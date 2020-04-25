@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$gradientRed".
-        on line 53 of C:\Users\lasse\Documents\GitHub\AMIGO\code\scss\signup.scss
+        on line 53 of E:\Xampp\htdocs\AMIGO\code\scss\signup.scss
 
 48: }
 49: 
@@ -15,7 +15,7 @@ Error: Undefined variable: "$gradientRed".
 58: }
 
 Backtrace:
-C:\Users\lasse\Documents\GitHub\AMIGO\code\scss\signup.scss:53
+E:\Xampp\htdocs\AMIGO\code\scss\signup.scss:53
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -74,4 +74,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$gradientRed\".\A         on line 53 of C:\Users\lasse\Documents\GitHub\AMIGO\code\scss\signup.scss\A \A 48: }\A 49: \A 50: .ctaButton {\A 51:   width: 50vw;\A 52:   height: 10vw;\A 53:   background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);\A 54:   color: #FFFFFF;\A 55:   border-radius: 30vw;\A 56:   border-style: none;\A 57:   font-weight: bold;\A 58: }"; }
+  content: "Error: Undefined variable: \"$gradientRed\".\A         on line 53 of E:\Xampp\htdocs\AMIGO\code\scss\signup.scss\A \A 48: }\A 49: \A 50: .ctaButton {\A 51:   width: 50vw;\A 52:   height: 10vw;\A 53:   background: linear-gradient(90deg, $gradientRed 0%, $gradientOrange 75%, $gradientPeach 100%);\A 54:   color: #FFFFFF;\A 55:   border-radius: 30vw;\A 56:   border-style: none;\A 57:   font-weight: bold;\A 58: }"; }
