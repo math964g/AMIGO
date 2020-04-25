@@ -26,7 +26,8 @@
     <div class="pulseBall">
       <img src="../../assets/ico/logo2.svg" alt="">
     </div>
-    <p>Searching for Amigos...</p>
+    <!-- TODO: Change the onclick for the implemented amntching algorithm -->
+    <button onclick="window.location.href='searchAmigo.php'" class="ctaButton" type="button" name="button">Find AMIGO</button>
   </div>
 
   <?php include 'bottomBar.php'; ?>
