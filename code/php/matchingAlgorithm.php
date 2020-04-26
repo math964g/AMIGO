@@ -75,7 +75,7 @@ foreach ($allUserInterests as $value) {
 $allMatches = [];
 $currentMatch = [];
 $successCounter = 0;
-$failureCounter = 0;
+$interestsMatchedCounter = 0;
 
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
@@ -95,12 +95,25 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         }
 
         else {
+
+          // Makes sure there won't be an error if the math is divided by 0
+          if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
+            $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
+            echo "Match procent: " . $matchPercent;
+          }
+
+          else {
+            $matchPercent = 0;
+          }
+          // Adds match percent to the second spot in the array
+          array_splice($currentMatch, 1, 0, $matchPercent);
+          // Pushes the match into $allMatches
           array_push($allMatches, $currentMatch);
           // Resets our array
           array_splice($currentMatch, 0);
           // Resets counter values
           $successCounter = 0;
-          $failureCounter = 0;
+          $interestsMatchedCounter = 0;
         }
 
         // Specifies the email to always be in the first spot of the array (makes things easier later)
@@ -122,13 +135,14 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         array_push($currentMatch, $arrayItem);
         // Add to succes number and max count for specific user
         $successCounter++;
+        $interestsMatchedCounter++;
         echo "\nSuccess: " . $successCounter;
       }
 
       // These are the not common interests
       else {
-        $failureCounter++;
-        echo "\nFail: " . $failureCounter;
+        $interestsMatchedCounter++;
+        echo "\nFail: " . $interestsMatchedCounter;
         // Add to max count for specific user
       }
 
@@ -137,9 +151,21 @@ for ($i=0; $i < count($allUserInterests); $i++) {
   }
 }
 
-// Pushes the last array to $allMatches
 // Note: I tried doing this with a function earlier, however it didn't work for some peculiar reason. I need guidance from the code gods for this, however they were afk at the time
+// Note: Could be made into a function, however it didn't work as i tried
+
+if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
+  $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
+  echo "Match procent: " . $matchPercent;
+}
+
+else {
+  $matchPercent = 0;
+}
+array_splice($currentMatch, 1, 0, $matchPercent);
+
 array_push($allMatches, $currentMatch);
+
 print_r($currentMatch);
 print_r($allMatches);
 
