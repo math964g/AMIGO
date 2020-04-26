@@ -74,11 +74,13 @@ foreach ($allUserInterests as $value) {
 
 $allMatches = [];
 $currentMatch = [];
+$successCounter = 0;
+$failureCounter = 0;
 
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
 
-  // Loops through all the users, one item at a time, to find the most compatible match
+  // A loop for the specific user
   foreach ($allUserInterests[$i] as $arrayItem) {
 
     // Checks if the element is the email, by using strpos (string position?) to see if it contains "@"
@@ -96,6 +98,9 @@ for ($i=0; $i < count($allUserInterests); $i++) {
           array_push($allMatches, $currentMatch);
           // Resets our array
           array_splice($currentMatch, 0);
+          // Resets counter values
+          $successCounter = 0;
+          $failureCounter = 0;
         }
 
         // Specifies the email to always be in the first spot of the array (makes things easier later)
@@ -116,10 +121,14 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         // Pushes interest to array
         array_push($currentMatch, $arrayItem);
         // Add to succes number and max count for specific user
+        $successCounter++;
+        echo "\nSuccess: " . $successCounter;
       }
 
       // These are the not common interests
       else {
+        $failureCounter++;
+        echo "\nFail: " . $failureCounter;
         // Add to max count for specific user
       }
 
