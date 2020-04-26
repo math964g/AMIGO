@@ -83,48 +83,43 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
     // Checks if the element is the email, by using strpos (string position?) to see if it contains "@"
     if (strpos($arrayItem, "@")) {
-      // echo "\n@ found in: " . $arrayItem . "\n";
-      // print_r($currentMatch);
-      // echo $arrayItem . "\n";
 
       // If array is not empty or if array is not the same as the last
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
+        // TODO: Gotta make sure how to make this a !=, that was i can save the else statement after, and copy over
         // Makes sure we don't push any empty match data
         if (empty($currentMatch)) {
-          // echo "\n\n\nI'm empty\n\n\n";
         }
 
         else {
-          // echo "\n\n\nWe just pushed it \n\n\n";
           array_push($allMatches, $currentMatch);
           // Resets our array
           array_splice($currentMatch, 0);
         }
 
+        // Specifies the email to always be in the first spot of the array (makes things easier later)
         $currentMatch[0] = $arrayItem;
-        // echo "\nSaving old match...\n" . "New current match set!\n\n";
       }
 
-      else {
-        // echo "Same user confirmed \n";
-      }
+      // TODO: When everything works accordingly, this else can be deleted
+      // else {
+      // }
     }
 
     // It pushes the element to an array
     else {
-      // echo "Try again: '" . $arrayItem . "' does not contain @ \n";
 
+      // Checks for common interests
       if (in_array($arrayItem, $loggedInUser)) {
         // TODO: This is suppose to be the % in the end instead of the interests
         // Pushes interest to array
         array_push($currentMatch, $arrayItem);
-        // echo "Common interest found!\n";
         // Add to succes number and max count for specific user
       }
 
+      // These are the not common interests
       else {
-        // echo "Incompatible\n";
         // Add to max count for specific user
       }
 
@@ -134,7 +129,7 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 }
 
 // Pushes the last array to $allMatches
-// Note: I tried doing this with a function earlier, however it didn't work for some peculiar reason. I need guidance from the code gods for this, however they were afk at the time 
+// Note: I tried doing this with a function earlier, however it didn't work for some peculiar reason. I need guidance from the code gods for this, however they were afk at the time
 array_push($allMatches, $currentMatch);
 print_r($currentMatch);
 print_r($allMatches);
