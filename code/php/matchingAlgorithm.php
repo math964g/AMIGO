@@ -71,7 +71,7 @@ else {
 foreach ($allUserInterests as $value) {
   // print_r($value);
 }
-
+$allMatches = [];
 $currentMatch = [];
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
@@ -86,6 +86,17 @@ for ($i=0; $i < count($allUserInterests); $i++) {
       echo $arrayItem . "\n";
 
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
+
+        // Makes sure we don't push any empty match data
+        if (empty($currentMatch)) {
+          echo "\n\n\nI'm empty\n\n\n";
+        }
+
+        else {
+          array_push($allMatches, $currentMatch);
+          echo "\n\n\nWe just pushed it \n\n\n";
+        }
+
         $currentMatch[0] = $arrayItem;
         echo "\nSaving old match...\n" . "New current match set!\n\n";
       }
@@ -100,6 +111,7 @@ for ($i=0; $i < count($allUserInterests); $i++) {
       echo "Try again: '" . $arrayItem . "' does not contain @ \n";
 
       if (in_array($arrayItem, $loggedInUser)) {
+        array_push($currentMatch, $arrayItem);
         echo "Common interest found!\n";
         // Add to succes number and max count for specific user
       }
@@ -111,6 +123,12 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
       // Save the percent for variable checking, and save the email as well, to be able to grab it later and match with the user
     }
+  }
+
+  if ($i == 4) {
+
+    echo "\n\n\nHeurika!\n";
+    print_r($allMatches);
   }
 }
 
