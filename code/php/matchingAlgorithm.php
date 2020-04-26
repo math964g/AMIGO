@@ -87,6 +87,7 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
+        // Function to save array
         // Makes sure we don't push any empty match data
         if (empty($currentMatch)) {
           echo "\n\n\nI'm empty\n\n\n";
@@ -95,6 +96,8 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         else {
           array_push($allMatches, $currentMatch);
           echo "\n\n\nWe just pushed it \n\n\n";
+          // Resets our array
+          array_splice($currentMatch, 0);
         }
 
         $currentMatch[0] = $arrayItem;
@@ -111,6 +114,8 @@ for ($i=0; $i < count($allUserInterests); $i++) {
       echo "Try again: '" . $arrayItem . "' does not contain @ \n";
 
       if (in_array($arrayItem, $loggedInUser)) {
+        // TODO: This is suppose to be the % in the end instead of the interests
+        // Pushes interest to array
         array_push($currentMatch, $arrayItem);
         echo "Common interest found!\n";
         // Add to succes number and max count for specific user
