@@ -75,13 +75,6 @@ foreach ($allUserInterests as $value) {
 $allMatches = [];
 $currentMatch = [];
 
-
-function saveCurrentMatch($currentMatch, $allMatches) {
-  print_r($currentMatch);
-  array_push($allMatches, $currentMatch);
-  print_r($allMatches);
-}
-
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
 
@@ -90,62 +83,61 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
     // Checks if the element is the email, by using strpos (string position?) to see if it contains "@"
     if (strpos($arrayItem, "@")) {
-      echo "\n@ found in: " . $arrayItem . "\n";
-      print_r($currentMatch);
-      echo $arrayItem . "\n";
+      // echo "\n@ found in: " . $arrayItem . "\n";
+      // print_r($currentMatch);
+      // echo $arrayItem . "\n";
 
       // If array is not empty or if array is not the same as the last
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
         // Makes sure we don't push any empty match data
         if (empty($currentMatch)) {
-          echo "\n\n\nI'm empty\n\n\n";
+          // echo "\n\n\nI'm empty\n\n\n";
         }
 
         else {
-          saveCurrentMatch($currentMatch, $allMatches);
-          echo "\n\n\nWe just pushed it \n\n\n";
+          // echo "\n\n\nWe just pushed it \n\n\n";
+          array_push($allMatches, $currentMatch);
           // Resets our array
           array_splice($currentMatch, 0);
         }
 
         $currentMatch[0] = $arrayItem;
-        echo "\nSaving old match...\n" . "New current match set!\n\n";
+        // echo "\nSaving old match...\n" . "New current match set!\n\n";
       }
 
       else {
-        echo "Same user confirmed \n";
+        // echo "Same user confirmed \n";
       }
     }
 
     // It pushes the element to an array
     else {
-      echo "Try again: '" . $arrayItem . "' does not contain @ \n";
+      // echo "Try again: '" . $arrayItem . "' does not contain @ \n";
 
       if (in_array($arrayItem, $loggedInUser)) {
         // TODO: This is suppose to be the % in the end instead of the interests
         // Pushes interest to array
         array_push($currentMatch, $arrayItem);
-        echo "Common interest found!\n";
+        // echo "Common interest found!\n";
         // Add to succes number and max count for specific user
       }
 
       else {
-        echo "Incompatible\n";
+        // echo "Incompatible\n";
         // Add to max count for specific user
       }
 
       // Save the percent for variable checking, and save the email as well, to be able to grab it later and match with the user
     }
   }
-
-  if ($i == 4) {
-
-    echo "\n\n\nHeurika!\n";
-    print_r($allMatches);
-  }
 }
 
+// Pushes the last array to $allMatches
+// Note: I tried doing this with a function earlier, however it didn't work for some peculiar reason. I need guidance from the code gods for this, however they were afk at the time 
+array_push($allMatches, $currentMatch);
+print_r($currentMatch);
+print_r($allMatches);
 
 
 
