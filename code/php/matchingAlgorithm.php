@@ -169,7 +169,8 @@ array_push($allMatches, $currentMatch);
 print_r($currentMatch);
 print_r($allMatches);
 
-
+// TODO: Find the most optimal match from the constructed array.
+// Simple if statement to get the highest one until nothing is left in the array
 
 
 
