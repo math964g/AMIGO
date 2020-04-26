@@ -71,8 +71,17 @@ else {
 foreach ($allUserInterests as $value) {
   // print_r($value);
 }
+
 $allMatches = [];
 $currentMatch = [];
+
+
+function saveCurrentMatch($currentMatch, $allMatches) {
+  print_r($currentMatch);
+  array_push($allMatches, $currentMatch);
+  print_r($allMatches);
+}
+
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
 
@@ -85,16 +94,16 @@ for ($i=0; $i < count($allUserInterests); $i++) {
       print_r($currentMatch);
       echo $arrayItem . "\n";
 
+      // If array is not empty or if array is not the same as the last
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
-        // Function to save array
         // Makes sure we don't push any empty match data
         if (empty($currentMatch)) {
           echo "\n\n\nI'm empty\n\n\n";
         }
 
         else {
-          array_push($allMatches, $currentMatch);
+          saveCurrentMatch($currentMatch, $allMatches);
           echo "\n\n\nWe just pushed it \n\n\n";
           // Resets our array
           array_splice($currentMatch, 0);
