@@ -72,16 +72,30 @@ foreach ($allUserInterests as $value) {
   // print_r($value);
 }
 
+$currentMatch = [];
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
-$currentMatch = [];
 
+  // Loops through all the users, one item at a time, to find the most compatible match
   foreach ($allUserInterests[$i] as $arrayItem) {
 
+    // Checks if the element is the email, by using strpos (string position?) to see if it contains "@"
     if (strpos($arrayItem, "@")) {
       echo "\n@ found in: " . $arrayItem . "\n";
+      print_r($currentMatch);
+      echo $arrayItem . "\n";
+
+      if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
+        $currentMatch[0] = $arrayItem;
+        echo "\nSaving old match...\n" . "New current match set!\n\n";
+      }
+
+      else {
+        echo "Same user confirmed \n";
+      }
     }
 
+    // It pushes the element to an array
     else {
       echo "Try again: '" . $arrayItem . "' does not contain @ \n";
 
@@ -95,7 +109,6 @@ $currentMatch = [];
         // Add to max count for specific user
       }
 
-      echo "Finished";
       // Save the percent for variable checking, and save the email as well, to be able to grab it later and match with the user
     }
   }
