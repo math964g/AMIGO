@@ -83,7 +83,6 @@ function calculateMatchPercent(&$currentMatch, $successCounter, $interestsMatche
   // ERROR HANDLING: Makes sure there won't be an error if the math is divided by 0
   if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
     $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
-    echo "Match procent: " . $matchPercent;
   } else {
     $matchPercent = 0;
   }
@@ -159,9 +158,6 @@ calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
 // Save match
 saveMatch($allMatches, $currentMatch);
 
-print_r($currentMatch);
-print_r($allMatches);
-
 // TODO: Find the most optimal match from the constructed array.
 // Simple if statement to get the highest one until nothing is left in the array
 $topMatch = [];
@@ -177,16 +173,12 @@ for ($i=0; $i < count($allMatches); $i++) {
     $contestingMatchesCheck = true;
 
     if (!in_array($topMatch, $contestingMatches)) {
-      echo "\nadded top match to array";
       array_push($contestingMatches, $topMatch);
     }
 
     if (!in_array($newMatch, $contestingMatches)) {
-      echo "\nadded new match to array";
       array_push($contestingMatches, $newMatch);
     }
-
-    echo "\n\nSame match percent between: " . $topMatch[0] . " & " . $newMatch[0] ."\n\n";
     // IDEA: It's possible to create a lot more rules in here for deciding.
     // Maybe nr. 1 only has  3 common interests while nr. 2 has 17 common interests.
     // In that case matching with nr. 2 would be ideal
@@ -196,7 +188,6 @@ for ($i=0; $i < count($allMatches); $i++) {
   }
 
   if ($i === (count($allMatches) - 1) && $contestingMatchesCheck === true) {
-    echo "FIGHT TO THE DEATH";
     print_r($contestingMatches);
 
     $randomNumber = mt_rand(0,1);
