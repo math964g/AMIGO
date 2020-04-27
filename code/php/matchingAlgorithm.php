@@ -172,11 +172,7 @@ for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
-  if (empty($topMatch) || $topMatch[1] < $newMatch[1]) {
-    $topMatch = $newMatch;
-  } else if ($topMatch[1] > $newMatch[1]) {
-    $topMatch = $topMatch;
-  } else if ($topMatch[1] == $newMatch[1]) {
+  if (!empty($topMatch) && $topMatch[1] == $newMatch[1]) {
 
     $contestingMatchesCheck = true;
 
@@ -194,17 +190,9 @@ for ($i=0; $i < count($allMatches); $i++) {
     // IDEA: It's possible to create a lot more rules in here for deciding.
     // Maybe nr. 1 only has  3 common interests while nr. 2 has 17 common interests.
     // In that case matching with nr. 2 would be ideal
-
-
-    $randomNumber = mt_rand(1,2);
-
-    if ($randomNumber === 1) {
-      $topMatch = $topMatch;
-    } else {
-      $topMatch = $newMatch;
-    }
-
-
+  }
+  elseif (empty($topMatch) || $topMatch[1] < $newMatch[1]) {
+    $topMatch = $newMatch;
   }
 
   if ($i === (count($allMatches) - 1) && $contestingMatchesCheck === true) {
