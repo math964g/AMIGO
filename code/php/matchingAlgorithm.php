@@ -92,6 +92,8 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         // TODO: Gotta make sure how to make this a !=, that was i can save the else statement after, and copy over
         // Makes sure we don't push any empty match data
         if (empty($currentMatch)) {
+          print_r($currentMatch);
+          echo "Bing to the Bong\n\n\n";
         }
 
         else {
@@ -171,8 +173,38 @@ print_r($allMatches);
 
 // TODO: Find the most optimal match from the constructed array.
 // Simple if statement to get the highest one until nothing is left in the array
+$oldMatch = [];
+$finalMatch = "";
 
+for ($i=0; $i < count($allMatches); $i++) {
 
+  $newMatch = $allMatches[$i];
+
+  if (empty($oldMatch) || $oldMatch[1] < $newMatch[1]) {
+    $oldMatch = $newMatch;
+    $finalMatch = $oldMatch;
+  }
+
+  else if ($oldMatch == $newMatch) {
+    print_r($allMatches);
+    echo "\n\nSame match percent between: " . $oldMatch[0] . " & " . $newMatch[0] ."\n\n";
+    // IDEA: It's possible to create a lot more rules in here for deciding.
+    // Maybe nr. 1 only has  3 common interests while nr. 2 has 17 common interests.
+    // In that case matching with nr. 2 would be ideal
+    $randomNumber = mt_rand(1,2);
+
+    if ($randomNumber === 1) {
+      $finalMatch = $oldMatch;
+    }
+
+    else {
+      $finalMatch = $newMatch;
+    }
+  }
+}
+
+echo "\nYour optimal match is: " . $finalMatch[0] . "!\n";
+print_r($finalMatch);
 
 
 
