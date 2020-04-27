@@ -77,6 +77,25 @@ $currentMatch = [];
 $successCounter = 0;
 $interestsMatchedCounter = 0;
 
+// We use & to create a reference. Without it $allMatches becomes a local variable.
+function calculateMatchPercent(&$currentMatch, $successCounter, $interestsMatchedCounter) {
+
+  // ERROR HANDLING: Makes sure there won't be an error if the math is divided by 0
+  if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
+    $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
+    echo "Match procent: " . $matchPercent;
+  } else {
+    $matchPercent = 0;
+  }
+  // Adds match percent to the second spot in the array
+  array_splice($currentMatch, 1, 0, $matchPercent);
+}
+
+function saveMatch(&$allMatches, $currentMatch) {
+  // Pushes the match into $allMatches
+  array_push($allMatches, $currentMatch);
+}
+
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
 
@@ -98,21 +117,15 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
         else {
 
-          // Makes sure there won't be an error if the math is divided by 0
-          if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
-            $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
-            echo "Match procent: " . $matchPercent;
-          }
+          // Get match %
+          calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
 
-          else {
-            $matchPercent = 0;
-          }
-          // Adds match percent to the second spot in the array
-          array_splice($currentMatch, 1, 0, $matchPercent);
-          // Pushes the match into $allMatches
-          array_push($allMatches, $currentMatch);
+          // Save match
+          saveMatch($allMatches, $currentMatch);
+
           // Resets our array
           array_splice($currentMatch, 0);
+
           // Resets counter values
           $successCounter = 0;
           $interestsMatchedCounter = 0;
@@ -132,41 +145,25 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
       // Checks for common interests
       if (in_array($arrayItem, $loggedInUser)) {
-        // TODO: This is suppose to be the % in the end instead of the interests
+
         // Pushes interest to array
         array_push($currentMatch, $arrayItem);
         // Add to succes number and max count for specific user
         $successCounter++;
         $interestsMatchedCounter++;
-        echo "\nSuccess: " . $successCounter;
-      }
-
-      // These are the not common interests
-      else {
-        $interestsMatchedCounter++;
-        echo "\nFail: " . $interestsMatchedCounter;
+      } else {
         // Add to max count for specific user
+        $interestsMatchedCounter++;
       }
-
-      // Save the percent for variable checking, and save the email as well, to be able to grab it later and match with the user
     }
   }
 }
 
-// Note: I tried doing this with a function earlier, however it didn't work for some peculiar reason. I need guidance from the code gods for this, however they were afk at the time
-// Note: Could be made into a function, however it didn't work as i tried
+// Get match %
+calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
 
-if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
-  $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
-  echo "Match procent: " . $matchPercent;
-}
-
-else {
-  $matchPercent = 0;
-}
-array_splice($currentMatch, 1, 0, $matchPercent);
-
-array_push($allMatches, $currentMatch);
+// Save match
+saveMatch($allMatches, $currentMatch);
 
 print_r($currentMatch);
 print_r($allMatches);
@@ -180,12 +177,16 @@ for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
+  // echo "\nOld match: " . $oldMatch[1];
+  echo "\nNew match: " . $newMatch[1];
+
   if (empty($oldMatch) || $oldMatch[1] < $newMatch[1]) {
     $oldMatch = $newMatch;
     $finalMatch = $oldMatch;
   }
-
-  else if ($oldMatch == $newMatch) {
+// $oldMatch[1] < $newMatch[1] som else if
+// oldmatch == newmatch some else
+  else if ($oldMatch[1] == $newMatch[1]) {
     print_r($allMatches);
     echo "\n\nSame match percent between: " . $oldMatch[0] . " & " . $newMatch[0] ."\n\n";
     // IDEA: It's possible to create a lot more rules in here for deciding.
