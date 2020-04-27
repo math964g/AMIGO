@@ -108,14 +108,8 @@ for ($i=0; $i < count($allUserInterests); $i++) {
       // If array is not empty or if array is not the same as the last
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
-        // TODO: Gotta make sure how to make this a !=, that was i can save the else statement after, and copy over
         // Makes sure we don't push any empty match data
-        if (empty($currentMatch)) {
-          print_r($currentMatch);
-          echo "Bing to the Bong\n\n\n";
-        }
-
-        else {
+        if (!empty($currentMatch)) {
 
           // Get match %
           calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
@@ -186,14 +180,13 @@ for ($i=0; $i < count($allMatches); $i++) {
 
     $contestingMatchesCheck = true;
 
-    // TODO: HELP - Is not in array
-    if (in_array($topMatch, $contestingMatches)) {
-      echo "added top match to array";
+    if (!in_array($topMatch, $contestingMatches)) {
+      echo "\nadded top match to array";
       array_push($contestingMatches, $topMatch);
     }
 
-    if (in_array($newMatch, $contestingMatches)) {
-      echo "added new match to array";
+    if (!in_array($newMatch, $contestingMatches)) {
+      echo "\nadded new match to array";
       array_push($contestingMatches, $newMatch);
     }
 
@@ -218,8 +211,8 @@ for ($i=0; $i < count($allMatches); $i++) {
     echo "FIGHT TO THE DEATH";
     print_r($contestingMatches);
 
-    $randomNumber = mt_rand(1,2);
-
+    $randomNumber = mt_rand(0,1);
+    var_export($contestingMatches);
     $topMatch = $contestingMatches[$randomNumber];
   }
 }
@@ -227,4 +220,4 @@ for ($i=0; $i < count($allMatches); $i++) {
 echo "\nYour optimal match is: " . $topMatch[0] . "!\n";
 print_r($topMatch);
 
- ?>
+?>
