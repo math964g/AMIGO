@@ -1,8 +1,6 @@
 <?php
 
-// TODO: Using dummy email until the session one is fixed
-// $ownerEmail = $_SESSION['name'];
-$ownerEmail = 'john@lennon.com';
+$ownerEmail = $_SESSION['username'];
 
 require 'dbConnect.php';
 
