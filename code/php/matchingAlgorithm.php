@@ -170,42 +170,62 @@ print_r($allMatches);
 
 // TODO: Find the most optimal match from the constructed array.
 // Simple if statement to get the highest one until nothing is left in the array
-$oldMatch = [];
-$finalMatch = "";
+$topMatch = [];
+$contestingMatches = [];
+$contestingMatchesCheck = false;
 
 for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
-  // echo "\nOld match: " . $oldMatch[1];
-  echo "\nNew match: " . $newMatch[1];
+  if (empty($topMatch) || $topMatch[1] < $newMatch[1]) {
+    $topMatch = $newMatch;
+  } else if ($topMatch[1] > $newMatch[1]) {
+    $topMatch = $topMatch;
+  } else if ($topMatch[1] == $newMatch[1]) {
 
-  if (empty($oldMatch) || $oldMatch[1] < $newMatch[1]) {
-    $oldMatch = $newMatch;
-    $finalMatch = $oldMatch;
-  }
-// $oldMatch[1] < $newMatch[1] som else if
-// oldmatch == newmatch some else
-  else if ($oldMatch[1] == $newMatch[1]) {
-    print_r($allMatches);
-    echo "\n\nSame match percent between: " . $oldMatch[0] . " & " . $newMatch[0] ."\n\n";
+    $contestingMatchesCheck = true;
+
+    // TODO: HELP - Is not in array
+    if (in_array($topMatch, $contestingMatches)) {
+      echo "added top match to array";
+      array_push($contestingMatches, $topMatch);
+    }
+
+    if (in_array($newMatch, $contestingMatches)) {
+      echo "added new match to array";
+      array_push($contestingMatches, $newMatch);
+    }
+
+    echo "\n\nSame match percent between: " . $topMatch[0] . " & " . $newMatch[0] ."\n\n";
     // IDEA: It's possible to create a lot more rules in here for deciding.
     // Maybe nr. 1 only has  3 common interests while nr. 2 has 17 common interests.
     // In that case matching with nr. 2 would be ideal
+
+
     $randomNumber = mt_rand(1,2);
 
     if ($randomNumber === 1) {
-      $finalMatch = $oldMatch;
+      $topMatch = $topMatch;
+    } else {
+      $topMatch = $newMatch;
     }
 
-    else {
-      $finalMatch = $newMatch;
-    }
+
+  }
+
+  if ($i === (count($allMatches) - 1) && $contestingMatchesCheck === true) {
+    echo "FIGHT TO THE DEATH";
+    print_r($contestingMatches);
+
+    $randomNumber = mt_rand(1,2);
+
+    $topMatch = $contestingMatches[$randomNumber];
   }
 }
 
-echo "\nYour optimal match is: " . $finalMatch[0] . "!\n";
-print_r($finalMatch);
+echo "\nYour optimal match is: " . $topMatch[0] . "!\n";
+print_r($topMatch);
 
 
 
