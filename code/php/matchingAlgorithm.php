@@ -8,10 +8,6 @@ require 'dbConnect.php';
 
 $loggedInUser = [];
 $allUserInterests = [];
-// TODO: Delete, probably not going to use these 2
-$tempArray = [];
-$currentArray = "";
-
 
 // Selects the user and their interest from the DB, and insert it into an array
 $userInterestData = "SELECT * FROM `user_interests` WHERE Email = '$ownerEmail';";
@@ -25,10 +21,6 @@ if ($resultCheck > 0) {
     $loggedInUser[0] = $row['Email'];
     array_push($loggedInUser, $row['Interest_ID']);
   }
-
-  // TODO: Delete this when done with testing
-  // print_r($loggedInUser);
-
 }
 
 $allUsersInterestData = "SELECT * FROM `user_interests`";
@@ -50,27 +42,6 @@ if ($resultCheck > 0) {
 }
 
 $conn->close();
-
-// TODO: Delete this later - using it now for testing and a note
-// -------------------------------------------------------------------------------------
-if (in_array("john@lennon.com", $allUserInterests[0])) {
-  // echo "Found";
-  // array_push($allUserInterests[0], $allUserInterests[1]['Interest_ID']);
-  // I slice out from $allUserInterests, starting at pos 1, slicing out 1 element
-  // array_splice($allUserInterests, 1, 1);
-  // $allUserInterests.splice(1, count($allUserInterests[1]));
-  // print_r($allUserInterests);
-}
-
-else {
-  // echo "Not found";
-}
-// -------------------------------------------------------------------------------------
-
-// TODO: Delete this, however this method could work too
-foreach ($allUserInterests as $value) {
-  // print_r($value);
-}
 
 $allMatches = [];
 $currentMatch = [];
@@ -127,10 +98,6 @@ for ($i=0; $i < count($allUserInterests); $i++) {
         // Specifies the email to always be in the first spot of the array (makes things easier later)
         $currentMatch[0] = $arrayItem;
       }
-
-      // TODO: When everything works accordingly, this else can be deleted
-      // else {
-      // }
     }
 
     // It pushes the element to an array
