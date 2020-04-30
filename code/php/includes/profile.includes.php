@@ -11,11 +11,11 @@ $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 
 if (isset($_POST['add-interest'])) {
 
-
-  $ownerEmail = $_SESSION['username'];
+  // $ownerEmail = $_SESSION['username'];
+  $ownerEmail = 'al@gmail.com';
   $interestID = $_POST['interest'];
 
-  if (empty($interest)) {
+  if (empty($interestID)) {
     header("Location: ../profile.php?error=noInterestAdded");
     exit();
   }

@@ -48,14 +48,18 @@
 
 
       <section class="choseInterest">
-        <form id="interestForm" action="profile.includes.php" method="post">
+        <form id="interestForm" action="includes/profile.includes.php" method="post">
           <select name="interest" placeholder="lasjdskla">
             <option value="placeholder">Chose interest</option>
-            <option value="football">Football</option>
-            <option value="computer">Computer</option>
-            <option value="dancing">Dancing</option>
-            <option value="party">Partying</option>
+            <option value="1">Football</option>
+            <option value="2">Computer</option>
+            <option value="3">Dancing</option>
+            <option value="4">Partying</option>
           </select>
+        </form>
+
+        <form action="includes/profile.includes.php" method="post">
+          <button form="interestForm" type="submit" name="add-interest"> + </button>
         </form>
 
       </section>
