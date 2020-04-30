@@ -7,10 +7,17 @@
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  align-items: center;
+  align-items: content: '';ter;
   text-align: center;
 
 }
+
+.amigoImg {
+  grid-row: 1;
+  grid-column: 2;
+  bottom: 10px;
+}
+
 
 .loginInfo {
   grid-row-start: 2;

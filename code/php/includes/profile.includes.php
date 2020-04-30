@@ -12,7 +12,7 @@ $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 if (isset($_POST['add-interest'])) {
 
 
-  $ownerEmail = $_SESSION['name'];
+  $ownerEmail = $_SESSION['username'];
   $interestID = $_POST['interest'];
 
   if (empty($interest)) {

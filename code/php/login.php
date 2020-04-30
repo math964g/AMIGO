@@ -11,6 +11,10 @@
 
     <section class="loginGrid">
 
+      <article class="amigoImg">
+        <img src="logo/elMuchacho1.png" alt="elMuchacho">
+      </article>
+
       <form id="linfo" class="loginInfo" action="includes/login.includes.php" method="post">
         <input type="text" name="Email" placeholder="Email">
         <br><br>
