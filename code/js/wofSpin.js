@@ -9,23 +9,11 @@ let spinner = null;
 let addDegree = 360;
 let spinStop = 0;
 
-// DELETE
-// ----------------------------------------------------------
-// Just for fun
-var audio = new Audio('../../assets/audio/ratata.mp3');
-// ----------------------------------------------------------
-
 spinButton.addEventListener("click", spinMe);
 
 // Function which calls for a spin
 function spinMe() {
   spinStop = Math.floor(Math.random() * 360) + addDegree;
-
-  // DELETE
-  // ----------------------------------------------------------
-  // Just for fun
-  audio.play();
-  // ----------------------------------------------------------
 
   // ----------------------------------------------------------
   // Makes it so you can only click the button once

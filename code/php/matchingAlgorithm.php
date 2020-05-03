@@ -34,9 +34,6 @@ if ($resultCheck > 0) {
       array_push($allUserInterests, $row);
 
   }
-
-  // print_r($allUserInterests);
-
 }
 
 $conn->close();
@@ -123,8 +120,7 @@ calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
 // Save match
 saveMatch($allMatches, $currentMatch);
 
-// TODO: Find the most optimal match from the constructed array.
-// Simple if statement to get the highest one until nothing is left in the array
+// Statement to get the highest one until nothing is left in the array
 $topMatch = [];
 $contestingMatches = [];
 $contestingMatchesCheck = false;
@@ -133,6 +129,7 @@ for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
+  // Sorted after how explicit they are
   if (!empty($topMatch) && $topMatch[1] == $newMatch[1]) {
 
     $contestingMatchesCheck = true;
@@ -153,7 +150,6 @@ for ($i=0; $i < count($allMatches); $i++) {
   }
 
   if ($i === (count($allMatches) - 1) && $contestingMatchesCheck === true) {
-    print_r($contestingMatches);
 
     $randomNumber = mt_rand(0,1);
     var_export($contestingMatches);
@@ -161,7 +157,7 @@ for ($i=0; $i < count($allMatches); $i++) {
   }
 }
 
-echo "\nYour optimal match is: " . $topMatch[0] . "!\n";
+echo "\n |||||||||||||||||||| Your optimal match is: " . $topMatch[0] . "! |||||||||||||||||||| \n";
 print_r($topMatch);
 
 ?>
