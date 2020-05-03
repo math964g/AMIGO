@@ -2,6 +2,7 @@
 
 <div class="bottomBar">
 
+  <!-- TODO: Make the color/class active if you're on the specific page -->
   <div onclick="window.location.href='eventFeed.php'" class="shortcutItem">
     <img src="../../assets/ico/flag.svg" alt="Event icon">
   </div>
