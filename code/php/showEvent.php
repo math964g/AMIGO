@@ -13,7 +13,7 @@
 
       <div class="returnButton">
 
-        <div class="returnArrow"></div>
+        <div onclick="window.location.href='eventFeed.php'" class="returnArrow"></div>
 
       </div>
 

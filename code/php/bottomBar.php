@@ -2,7 +2,7 @@
 
 <div class="bottomBar">
 
-  <div class="shortcutItem">
+  <div onclick="window.location.href='eventFeed.php'" class="shortcutItem">
     <img src="../../assets/ico/flag.svg" alt="Event icon">
   </div>
 
@@ -42,11 +42,11 @@
       <div class="options">
         <div class="menuPoint">
           <img src="../../assets/ico/loupe.svg" alt="">
-          <h3>Find AMIGO</h3>
+          <h3 onclick="window.location.href='findAmigo.php'">Find AMIGO</h3>
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/calender.svg" alt="">
-          <h3>Create event</h3>
+          <h3 onclick="window.location.href='createEvent.php'">Create event</h3>
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/friends.svg" alt="">
@@ -54,7 +54,7 @@
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/wheel.svg" alt="">
-          <h3>Lykkehjulet</h3>
+          <h3 onclick="window.location.href='shop.php'">Lykkehjulet</h3>
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/medal.svg" alt="">
