@@ -9,10 +9,6 @@
 
   $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 
-  if ( mysqli_connect_errno() ) {
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
-
   if (!isset($_POST['Email'], $_POST['Password'])) {
     header("Location: ../login.php?error=emptyfields");
     exit();

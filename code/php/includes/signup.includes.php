@@ -39,7 +39,7 @@ else {
 }
 
 if ($conn->query($sql) === TRUE) {
-  header("Location: ../signup.php?success=signupComplete");
+  header("Location: ../login.php?success=signupComplete");
   exit();
 
 } else {

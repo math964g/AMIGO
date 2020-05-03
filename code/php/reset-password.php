@@ -1,6 +1,3 @@
-<?php
- ?>
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -17,12 +14,16 @@
           <!-- <h1>Reset Your Password</h1>
           <p>Instructions will be send to your email.</p> -->
 
-          <form id="nopwd" class="nopwd" action="reset-request.includes.php" method="post">
-            <input type="text" name="email" placeholder="Enter your e-mail address...">
+          <div class="amigoImg">
+            <img src="logo/elMuchacho1.png" alt="elMuchacho">
+          </div>
+
+          <form id="nopwd" class="nopwd" action="includes/reset-request.includes.php" method="post">
+            <input type="text" name="email" placeholder="Reset password is currently out of order"> <!-- Enter your e-mail address... -->
           </form>
 
           <form class="loginbtn" action="signup.php" method="post">
-            <button form="nopwd" class="ctaButton" type="submit" name="reset-request-submit">Reclaim Password</button>
+            <button form="nopwd" class="ctaButton" type="submit" name="reset-request-submit"> <a href="login.php"></a>Reclaim Password</button>
           </form>
 
         </section>

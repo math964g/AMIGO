@@ -16,6 +16,11 @@
   justify-items: center;
   align-items: center; }
 
+.amigoImg {
+  grid-column: 2;
+  grid-row: 1;
+  bottom: 10px; }
+
 .nopwd {
   grid-column-start: 2;
   grid-row-start: 2; }

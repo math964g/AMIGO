@@ -11,29 +11,24 @@ $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 
 if (isset($_POST['add-interest'])) {
 
-  // $ownerEmail = $_SESSION['username'];
-  $ownerEmail = 'al@gmail.com';
+  $ownerEmail = 'awesome@mail.dk'; //test mail
   $interestID = $_POST['interest'];
 
-  if (empty($interestID)) {
-    header("Location: ../profile.php?error=noInterestAdded");
+
+  $sqlStmt = $conn->prepare("INSERT INTO user_interests (Email, Interest_ID)
+  VALUES (?, ?)");
+
+  $sqlStmt -> bind_Param('si', $ownerEmail, $interestID);
+  $sqlStmt -> execute();
+
+
+  if ($conn -> query($sqlStmt) === FALSE) {
+    header("Location:../profile.php?success=InterestAdded");
     exit();
-  }
-
-  else {
-    $sql = "INSERT INTO user_interests (Email, Interest_ID)
-    VALUES ('$ownerEmail', '$interestID')";
-  }
-
-  if ($conn->query($sql) === TRUE) {
-    header("Location: ../profile.php?success");
-    exit();
-
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
   }
 
 }
+
 
 
  ?>

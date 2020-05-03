@@ -23,7 +23,8 @@ if (isset($_POST["reset-request-submit"])) {
   $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
   $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)){
-    echo "There was an error!";
+    header("Location: ../login.php?resetPwd=UnderConstruction");
+    // echo "There was an error!";
     exit();
   } else {
     mysqli_stmt_bind_param($stmt, "s", $userEmail);
@@ -44,7 +45,7 @@ if (isset($_POST["reset-request-submit"])) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 
-    $to = $userEmail
+    $to = $userEmail;
 
     $subject= 'Reset your password for Amigo';
 
