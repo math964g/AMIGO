@@ -82,7 +82,7 @@
 
   // TODO: File img upload - https://www.w3schools.com/php/php_file_upload.asp
 
-  $ownerEmail = $_SESSION['name'];
+  $ownerEmail = $_SESSION['username'];
 
   // print_r($ownerEmail);
 

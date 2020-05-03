@@ -123,8 +123,7 @@ calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
 // Save match
 saveMatch($allMatches, $currentMatch);
 
-// TODO: Find the most optimal match from the constructed array.
-// Simple if statement to get the highest one until nothing is left in the array
+// Statement to get the highest one until nothing is left in the array
 $topMatch = [];
 $contestingMatches = [];
 $contestingMatchesCheck = false;
@@ -133,6 +132,7 @@ for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
+  // Sorted after how explicit they are
   if (!empty($topMatch) && $topMatch[1] == $newMatch[1]) {
 
     $contestingMatchesCheck = true;
