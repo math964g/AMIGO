@@ -34,9 +34,6 @@ if ($resultCheck > 0) {
       array_push($allUserInterests, $row);
 
   }
-
-  // print_r($allUserInterests);
-
 }
 
 $conn->close();
@@ -153,7 +150,6 @@ for ($i=0; $i < count($allMatches); $i++) {
   }
 
   if ($i === (count($allMatches) - 1) && $contestingMatchesCheck === true) {
-    print_r($contestingMatches);
 
     $randomNumber = mt_rand(0,1);
     var_export($contestingMatches);
@@ -161,7 +157,7 @@ for ($i=0; $i < count($allMatches); $i++) {
   }
 }
 
-echo "\nYour optimal match is: " . $topMatch[0] . "!\n";
+echo "\n |||||||||||||||||||| Your optimal match is: " . $topMatch[0] . "! |||||||||||||||||||| \n";
 print_r($topMatch);
 
 ?>
