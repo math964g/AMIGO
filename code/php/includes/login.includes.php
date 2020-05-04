@@ -5,7 +5,7 @@
   $DBserver = "localhost";
   $DBusername = "root";
   $DBpassword = "";
-  $DBdatabase = "amigo_db";
+  $DBdatabase = "xtdb10001489";
 
   $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 

@@ -1,11 +1,7 @@
 <?php
 
-$DBserver = "localhost";
-$DBusername = "root";
-$DBpassword = "";
-$DBdatabase = "amigo_db";
+require 'dbConnect.php';
 
-$conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
 
 if (isset($_POST['signup-submit'])) {
 
