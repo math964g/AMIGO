@@ -51,7 +51,7 @@
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/friends.svg" alt="">
-          <h3>Things todo</h3>
+          <h3>Things to do</h3>
         </div>
         <div class="menuPoint">
           <img src="../../assets/ico/wheel.svg" alt="">
