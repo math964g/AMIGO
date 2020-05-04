@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$ownerEmail = $_SESSION['userName'];
+$ownerEmail = $_SESSION['username'];
 
 require 'dbConnect.php';
 
