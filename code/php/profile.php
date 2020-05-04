@@ -45,7 +45,7 @@
         <h3>Education</h3>
       </section>
 
-
+      <?php include 'loadUserTags.php' ?>
 
       <section class="choseInterest">
         <form id="interestForm" action="includes/profile.includes.php" method="post">
