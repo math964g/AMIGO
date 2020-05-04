@@ -105,7 +105,6 @@
   .interestPlaceholder > div {
     border: 1px black solid;
     padding: 10px;
-    margin-bottom: 20px;
-    border-color: linear-gradient(90deg, #DE5543 0%, #E68E60 75%, #FFC4BC 100%); }
+    margin-bottom: 20px; }
 
 /*# sourceMappingURL=profile.css.map */

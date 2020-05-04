@@ -1,6 +1,6 @@
 <?php
 
-$ownerEmail = 'bingbong@123.dk';
+$ownerEmail = 'awesome@mail.dk';
 
 require 'dbConnect.php';
 
@@ -35,10 +35,32 @@ if ($resultCheckInterest > 0) {
 // print_r($interestDisplay);
 // echo "Interest_ID" . $userInterest[0] . "Interest name" . $interestDisplay[($userInterest[0] - 1)];
 
-for ($i=0; $i < count($userInterest); $i++) {
-  echo $interestDisplay[($userInterest[$i] - 1)];
-}
+// for ($i=0; $i < count($userInterest); $i++) {
+//
+//
+//   echo $interestDisplay[($userInterest[$i] - 1)];
+// }
+
 
 
 
 ?>
+
+<script type="text/javascript">
+
+
+let displayInterest = <?php echo json_encode($interestDisplay) ?>;
+let userInterest = <?php echo json_encode($userInterest) ?>;
+console.log(displayInterest);
+console.log(userInterest[0]);
+
+const interestPlaceholder = document.getElementById("iPlaceholder");
+interestPlaceholder.innerHTML = "";
+console.log(interestPlaceholder);
+for (var i = 0; i < userInterest.length; i++) {
+  interestPlaceholder.innerHTML +=
+  '<div><p>'+ displayInterest[userInterest[i - 1]] + '</p></div>';
+  console.log('loop is running');
+}
+
+</script>

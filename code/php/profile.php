@@ -64,31 +64,7 @@
 
       </section>
 
-      <section class="interestPlaceholder">
-
-        <div class="holder1">
-          <p> The placeholder</p>
-        </div>
-
-        <div class="holder2">
-          <p> The placeholder</p>
-        </div>
-
-        <div class="holder3">
-          <p> The placeholder</p>
-        </div>
-
-        <div class="holder4">
-          <p> The placeholder</p>
-        </div>
-
-        <div class="holder5">
-          <p> The placeholder</p>
-        </div>
-
-        <div class="holder6">
-          <p>The placeholder</p>
-        </div>
+      <section id="iPlaceholder" class="interestPlaceholder">
 
       </section>
 
