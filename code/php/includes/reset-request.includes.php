@@ -1,11 +1,6 @@
 <?php
 
-$DBserver = "localhost";
-$DBusername = "root";
-$DBpassword = "";
-$DBdatabase = "amigo_db";
-
-$conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
+require 'dbConnect.php';
 
 if (isset($_POST["reset-request-submit"])) {
 

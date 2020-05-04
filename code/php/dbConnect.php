@@ -1,9 +1,9 @@
 <?php
 
-  $server = "localhost";
-  $username = "root";
-  $password = "";
-  $database = "amigo_db";
+  $server = "mysql5-6num17.webhosting.dk";
+  $username = "xtuser10001489";
+  $password = "iKBfbN63";
+  $database = "xtdb10001489";
 
   $conn = mysqli_connect($server, $username, $password, $database);
 
