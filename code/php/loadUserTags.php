@@ -1,6 +1,6 @@
 <?php
 
-$ownerEmail = 'awesome@mail.dk';
+$ownerEmail = 'bingbong@123.dk';
 
 require 'dbConnect.php';
 
@@ -33,5 +33,12 @@ if ($resultCheckInterest > 0) {
   }
 }
 // print_r($interestDisplay);
-echo "Interest_ID" . $userInterest[0] . "Interest name" . $interestDisplay[($userInterest[0] - 1)];
- ?>
+// echo "Interest_ID" . $userInterest[0] . "Interest name" . $interestDisplay[($userInterest[0] - 1)];
+
+for ($i=0; $i < count($userInterest); $i++) {
+  echo $interestDisplay[($userInterest[$i] - 1)];
+}
+
+
+
+?>
