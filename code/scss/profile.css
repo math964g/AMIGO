@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,157 @@
   scroll-behavior: smooth;
   list-style: none;
   text-decoration: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none; }
+
+.ctaButton {
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(90deg, #DE7F43 0%, #E6B860 75%, #FDCE4E 100%);
+  color: #FFFFFF;
+  border-radius: 30vw;
+  border-style: none;
+  font-weight: bold; }
+
+.footerBar {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 15px;
+  width: 100vw;
+  padding: 10px;
+  background-color: #D6D6D6;
+  margin-bottom: 10vh; }
+
+.bottomBar {
+  z-index: 6;
+  position: fixed;
+  bottom: 0;
+  background-color: #FFF;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100vw;
+  height: 10vh; }
+  .bottomBar > div {
+    margin: auto;
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .bottomBar > div > img {
+      height: 100%;
+      width: 100%; }
+  .bottomBar > .shortcutItem {
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .bottomBar > .shortcutItem > .line {
+      position: relative;
+      width: 30px;
+      height: 4px;
+      background-color: black; }
+    .bottomBar > .shortcutItem > .one {
+      margin-top: 2px; }
+    .bottomBar > .shortcutItem > .two {
+      margin-top: 7px; }
+    .bottomBar > .shortcutItem > .three {
+      margin-top: 7px; }
+
+.activeMenu {
+  filter: invert(56%) sepia(62%) saturate(519%) hue-rotate(338deg) brightness(91%) contrast(91%); }
+
+#grey_overlay {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  filter: opacity(0%);
+  pointer-events: none;
+  transition: 0.5s; }
+
+.filterActive {
+  filter: opacity(20%) !important; }
+
+#sideMenu {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 5vw 0vw 0vw 5vw;
+  width: 80vw;
+  height: 90vh;
+  background-color: #FFF;
+  transition: 0.5s;
+  transform: translateX(100%);
+  pointer-events: all; }
+
+.navActive {
+  transform: translateX(0%) !important; }
+
+.burgerMenu_container {
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; }
+
+.content_container {
+  display: grid;
+  grid-template-areas: "profile", "line", "options", "line", "settings";
+  width: 75%;
+  height: 75%;
+  margin: 25% auto; }
+
+.profile {
+  grid-area: "profile";
+  display: flex;
+  flex-direction: row; }
+  .profile > img {
+    width: 50px;
+    height: 50px; }
+  .profile > .profile_info {
+    display: flex;
+    flex-direction: column; }
+    .profile > .profile_info > h4 {
+      margin: 2px 15px 2px 15px; }
+    .profile > .profile_info > p {
+      margin: 2px 15px; }
+
+.options {
+  grid-area: "options"; }
+  .options > .menuPoint {
+    display: flex;
+    flex-direction: row;
+    margin: 15px auto; }
+    .options > .menuPoint > img {
+      width: 1.4em;
+      height: 1.4em; }
+    .options > .menuPoint > h3 {
+      margin: auto auto auto 15px; }
+
+.settings {
+  grid-area: "settings";
+  display: flex;
+  flex-direction: column; }
+  .settings > p {
+    margin: 5px 0px; }
+
+.line {
+  grid-area: "line";
+  height: 5px;
+  background-color: #f2f2f2; }
 
 .profileGrid {
   height: 100vh;
@@ -95,6 +248,16 @@
   font-size: 14px;
   font-weight: bold; }
 
+.button {
+  font-weight: bold; }
+
+button {
+  font-size: 40px;
+  outline: none;
+  padding: 0;
+  border: none;
+  background: none; }
+
 .interestPlaceholder {
   grid-column: 2;
   grid-row: 5;
@@ -105,6 +268,6 @@
   .interestPlaceholder > div {
     border: 1px black solid;
     padding: 10px;
-    margin-bottom: 20px; }
+    margin-bottom: 60px; }
 
 /*# sourceMappingURL=profile.css.map */

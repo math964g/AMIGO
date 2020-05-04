@@ -1,6 +1,7 @@
 <?php
 
-$ownerEmail = 'awesome@mail.dk';
+session_start();
+$ownerEmail = $_SESSION['userName'];
 
 require 'dbConnect.php';
 
@@ -19,7 +20,6 @@ if ($resultCheck > 0) {
     array_push($userInterest, $row['Interest_ID']);
   }
 }
-print_r($userInterest);
 
 $userInterestName = " SELECT Interest_Name FROM interests ORDER BY Interest_ID";
 $resultInterest = mysqli_query($conn, $userInterestName);
@@ -52,14 +52,14 @@ if ($resultCheckInterest > 0) {
 let displayInterest = <?php echo json_encode($interestDisplay) ?>;
 let userInterest = <?php echo json_encode($userInterest) ?>;
 console.log(displayInterest);
-console.log(userInterest[0]);
+console.log(userInterest);
 
 const interestPlaceholder = document.getElementById("iPlaceholder");
 interestPlaceholder.innerHTML = "";
-console.log(interestPlaceholder);
+
 for (var i = 0; i < userInterest.length; i++) {
   interestPlaceholder.innerHTML +=
-  '<div><p>'+ displayInterest[userInterest[i - 1]] + '</p></div>';
+  '<div><p>'+ displayInterest[(userInterest[i] - 1)] + '</p></div>';
   console.log('loop is running');
 }
 

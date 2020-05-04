@@ -32,7 +32,7 @@
 
 
        <div class="avatar-preview">
-           <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+           <div id="imagePreview" style="background-image: url();">
            </div>
        </div>
      </section>
@@ -40,12 +40,12 @@
 
 
       <section class="nameNEducation">
-        <h2>Name</h2>
+        <h2>University College Lillebælt</h2>
         <br>
-        <h3>Education</h3>
+        <p>(Image upload is under construction)</p>
       </section>
 
-      <?php include 'loadUserTags.php' ?>
+
 
       <section class="choseInterest">
         <form id="interestForm" action="includes/profile.includes.php" method="post">
@@ -58,8 +58,9 @@
           </select>
         </form>
 
-        <form action="includes/profile.includes.php" method="post">
+        <form class="button" action="includes/profile.includes.php" method="post">
           <button form="interestForm" type="submit" name="add-interest"> + </button>
+          <p>Hit the plus to insert your interest!</p>
         </form>
 
       </section>
@@ -67,7 +68,8 @@
       <section id="iPlaceholder" class="interestPlaceholder">
 
       </section>
-
+      <?php include 'loadUserTags.php' ?>
+      <?php include 'bottomBar.php' ?>
 
 
     </section>
