@@ -2,7 +2,7 @@
 
 session_start();
 
-require 'dbConnect.php';
+require '../dbConnect.php';
 
 if (isset($_POST['add-interest'])) {
 

@@ -58,6 +58,5 @@ function spinDegree() {
     }
 
     rotation = 0;
-    audio.pause();
   }
 }

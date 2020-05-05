@@ -1,6 +1,6 @@
 <?php
 
-require 'dbConnect.php';
+require '../dbConnect.php';
 
 if (isset($_POST["reset-request-submit"])) {
 

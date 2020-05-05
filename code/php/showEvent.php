@@ -11,9 +11,9 @@
 
     <div class="topBar">
 
-      <div class="returnButton">
+      <div onclick="goBack()" class="returnButton">
 
-        <div onclick="window.location.href='eventFeed.php'" class="returnArrow"></div>
+        <div class="returnArrow"></div>
 
       </div>
 

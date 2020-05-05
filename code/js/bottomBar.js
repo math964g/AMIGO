@@ -24,3 +24,7 @@ function toggleNav() {
   // Toggles grey filter
   document.getElementById("grey_overlay").classList.toggle("filterActive");
 }
+
+function goBack() {
+  window.history.back();
+}

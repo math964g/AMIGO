@@ -1,14 +1,7 @@
 <?php
-
   session_start();
 
-  $DBserver = "localhost";
-  $DBusername = "root";
-  $DBpassword = "";
-  $DBdatabase = "xtdb10001489";
-
-  $conn = mysqli_connect($DBserver, $DBusername, $DBpassword, $DBdatabase);
-
+  require '../dbConnect.php';
   if (!isset($_POST['Email'], $_POST['Password'])) {
     header("Location: ../login.php?error=emptyfields");
     exit();

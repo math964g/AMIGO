@@ -13,21 +13,22 @@
 
   <div class="topBar">
 
-    <div class="returnButton">
+    <div onclick="goBack()" class="returnButton">
 
-      <!-- No functionality yet -->
       <div class="returnArrow"></div>
 
     </div>
 
     <h1>AMIGO</h1>
 
-    <div onclick="window.location.href='createEvent.php'" class="addEvent">
+    <a href="/code/php/createEvent.php">
+      <div class="addEvent">
 
-      <div class="lineVertical"></div>
-      <div class="lineHorizontal"></div>
+        <div class="lineVertical"></div>
+        <div class="lineHorizontal"></div>
 
-    </div>
+      </div>
+    </a>
 
   </div>
 

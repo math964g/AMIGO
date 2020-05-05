@@ -3,9 +3,11 @@
 <div class="bottomBar">
 
   <!-- TODO: Make the color/class active if you're on the specific page -->
-  <div onclick="window.location.href='eventFeed.php'" class="shortcutItem">
-    <img src="../../assets/ico/flag.svg" alt="Event icon">
-  </div>
+    <div class="shortcutItem">
+      <a href="/code/php/eventFeed.php">
+        <img src="../../assets/ico/flag.svg" alt="Event icon">
+      </a>
+    </div>
 
   <div class="shortcutItem">
     <img src="../../assets/ico/calender.svg" alt="Calender icon">
@@ -41,30 +43,38 @@
       <div class="line"></div>
 
       <div class="options">
-        <div class="menuPoint">
-          <img src="../../assets/ico/loupe.svg" alt="">
-          <h3 onclick="window.location.href='findAmigo.php'">Find AMIGO</h3>
-        </div>
-        <div class="menuPoint">
-          <img src="../../assets/ico/calender.svg" alt="">
-          <h3 onclick="window.location.href='createEvent.php'">Create event</h3>
-        </div>
+        <a href="/code/php/findAmigo.php">
+          <div class="menuPoint">
+            <img src="../../assets/ico/loupe.svg" alt="">
+            <h3>Find AMIGO</h3>
+          </div>
+        </a>
+        <a href="/code/php/createEvent.php">
+          <div class="menuPoint">
+            <img src="../../assets/ico/calender.svg" alt="">
+            <h3>Create event</h3>
+          </div>
+          </a>
         <div class="menuPoint">
           <img src="../../assets/ico/friends.svg" alt="">
           <h3>Things to do</h3>
         </div>
-        <div class="menuPoint">
-          <img src="../../assets/ico/wheel.svg" alt="">
-          <h3 onclick="window.location.href='shop.php'">Lykkehjulet</h3>
-        </div>
+        <a href="/code/php/shop.php">
+          <div class="menuPoint">
+            <img src="../../assets/ico/wheel.svg" alt="">
+            <h3>Lykkehjulet</h3>
+          </div>
+        </a>
         <div class="menuPoint">
           <img src="../../assets/ico/medal.svg" alt="">
           <h3>Rewards</h3>
         </div>
-        <div class="menuPoint">
-          <img src="../../assets/ico/user.svg" alt="">
-          <h3>Profile</h3>
-        </div>
+        <a href="/code/php/profile.php">
+          <div class="menuPoint">
+            <img src="../../assets/ico/user.svg" alt="">
+            <h3>Profile</h3>
+          </div>
+        </a>
       </div>
 
       <div class="line"></div>

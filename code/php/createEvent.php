@@ -12,7 +12,7 @@
 
     <div class="topBar">
 
-      <div class="returnButton">
+      <div onclick="goBack()" class="returnButton">
 
         <div class="returnArrow"></div>
 

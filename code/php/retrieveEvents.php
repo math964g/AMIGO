@@ -17,7 +17,6 @@ if ($resultCheck > 0) {
   // echo '<div class="eventFeed">';
 
   while ($row = mysqli_fetch_assoc($result)) {
-
     // Creates an array with all events
     $eventList[] = $row;
   }
@@ -26,6 +25,13 @@ if ($resultCheck > 0) {
 
 }
 
+// This is MAGIC
+// This was some whacky stuff, browser is utf-8 and our database was in windows-1252. We didn't learn about this so we had to call in the big guns for some help.
+$eventList = mb_convert_encoding($eventList, "UTF-8", "Windows-1252");
+$eventListJson = json_encode($eventList);
+
+// var_export($eventListJson);
+// echo $eventListJson;
 ?>
 
 <script>
@@ -34,7 +40,7 @@ console.log('%c categorySelector.js loaded successfully! ', 'color: #32fa3c');
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 // Collection of our global variables
-let allEvents = <?php echo json_encode($eventList) ?>;
+let allEvents = JSON.parse('<?php echo $eventListJson ?>');
 let musicEvents = [];
 let sportEvents = [];
 let foodEvents = [];
@@ -141,7 +147,7 @@ else {
         console.log(clickedEvent);
 
         sessionStorage.setItem("eventCollection", JSON.stringify(clickedEvent));
-        location.href = "http://localhost/amigo/code/php/showEvent.php";
+        location.href = "showEvent.php";
       }
     }
   }
@@ -161,7 +167,7 @@ for (var i = 0; i < allEvents.length; i++) {
         foodEvents.push(allEvents[i]);
       break;
     default:
-      console.log("You have an unexpected category with at Event_ID: " + eventList[i].Event_ID);
+      console.log("You have an unexpected category with at Event_ID: " + allEvents[i].Event_ID);
   }
 }
 
