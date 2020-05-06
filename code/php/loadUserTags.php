@@ -41,7 +41,8 @@ if ($resultCheckInterest > 0) {
 //   echo $interestDisplay[($userInterest[$i] - 1)];
 // }
 
-
+$interestDisplay = mb_convert_encoding($interestDisplay, "UTF-8", "Windows-1252");
+$interestListJson = json_encode($interestList);
 
 
 ?>
@@ -49,7 +50,7 @@ if ($resultCheckInterest > 0) {
 <script type="text/javascript">
 
 
-let displayInterest = <?php echo json_encode($interestDisplay) ?>;
+let displayInterest = JSON.parse('<?php echo $interestListJson ?>');
 let userInterest = <?php echo json_encode($userInterest) ?>;
 console.log(displayInterest);
 console.log(userInterest);
