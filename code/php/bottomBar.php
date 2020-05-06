@@ -43,38 +43,30 @@
       <div class="line"></div>
 
       <div class="options">
-        <a href="/code/php/findAmigo.php">
-          <div class="menuPoint">
-            <img src="../../assets/ico/loupe.svg" alt="">
+          <div onclick="window.location.href='findAmigo.php'" class="menuPoint">
+            <img src="../../assets/ico/loupe_orange.svg" alt="">
             <h3>Find AMIGO</h3>
           </div>
-        </a>
-        <a href="/code/php/createEvent.php">
-          <div class="menuPoint">
-            <img src="../../assets/ico/calender.svg" alt="">
+          <div onclick="window.location.href='createEvent.php'" class="menuPoint">
+            <img src="../../assets/ico/calender_orange.svg" alt="">
             <h3>Create event</h3>
           </div>
-          </a>
         <div class="menuPoint">
-          <img src="../../assets/ico/friends.svg" alt="">
+          <img src="../../assets/ico/friends_orange.svg" alt="">
           <h3>Things to do</h3>
         </div>
-        <a href="/code/php/shop.php">
-          <div class="menuPoint">
-            <img src="../../assets/ico/wheel.svg" alt="">
+          <div onclick="window.location.href='shop.php'" class="menuPoint">
+            <img src="../../assets/ico/wheel_orange.svg" alt="">
             <h3>Lykkehjulet</h3>
           </div>
-        </a>
         <div class="menuPoint">
-          <img src="../../assets/ico/medal.svg" alt="">
+          <img src="../../assets/ico/medal_orange.svg" alt="">
           <h3>Rewards</h3>
         </div>
-        <a href="/code/php/profile.php">
-          <div class="menuPoint">
-            <img src="../../assets/ico/user.svg" alt="">
+          <div onclick="window.location.href='profile.php'" class="menuPoint">
+            <img src="../../assets/ico/user_orange.svg" alt="">
             <h3>Profile</h3>
           </div>
-        </a>
       </div>
 
       <div class="line"></div>
