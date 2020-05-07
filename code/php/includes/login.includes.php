@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $_SESSION['username'] = $_POST['Email'];
 
   require '../dbConnect.php';
   if (!isset($_POST['Email'], $_POST['Password'])) {
@@ -18,9 +19,13 @@
 	$stmt->bind_result($Email, $Password);
 	$stmt->fetch();
 
+    if($_SESSION["username"] != true){
+     echo 'not logged in';
+     header("Location: ../login.php");
+     exit;
+    }
 
-	  if ($_POST['Password'] === $Password) {
-    $_SESSION['username'] = $_POST['Email'];
+	  else if ($_POST['Password'] === $Password) {
     header("Location: ../eventFeed.php");
 	 }
 

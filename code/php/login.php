@@ -16,7 +16,7 @@
       </article>
 
       <form id="linfo" class="loginInfo" action="includes/login.includes.php" method="post">
-        <input type="text" name="Email" placeholder="Email">
+        <input type="email" name="Email" placeholder="Email">
         <br><br>
         <input type="password" name="Password" placeholder="password">
         <br> <br>

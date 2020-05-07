@@ -6,7 +6,7 @@ require '../dbConnect.php';
 
 if (isset($_POST['add-interest'])) {
 
-  $ownerEmail = 'awesome@mail.dk'; //test mail
+  $ownerEmail = $_SESSION['username']; 
   $interestID = $_POST['interest'];
 
   $sqlStmt = $conn->prepare("INSERT INTO user_interests (Email, Interest_ID)
