@@ -12,8 +12,6 @@ if (isset($_POST['add-interest'])) {
   $sqlStmt = $conn->prepare("INSERT INTO user_interests (Email, Interest_ID)
   VALUES ('$ownerEmail', $interestID)");
 
-  // $getInterest = $conn->prepare("SELECT Interest_Name FROM interests WHERE Email = $ownerEmail");
-  // $sqlStmt -> bind_Param('si', $ownerEmail, $interestID);
   $sqlStmt -> execute();
 
   if ($conn -> connect_error) {

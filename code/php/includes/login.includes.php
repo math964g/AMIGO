@@ -20,9 +20,8 @@
 
 
 	  if ($_POST['Password'] === $Password) {
-    header("Location: ../eventFeed.php");
-    $_SESSION['loggedin'] = TRUE;
     $_SESSION['username'] = $_POST['Email'];
+    header("Location: ../eventFeed.php");
 	 }
 
    else {
