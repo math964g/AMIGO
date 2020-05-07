@@ -105,7 +105,7 @@
 
       if ($conn->query($sql) === TRUE) {
 
-        echo "New event created!";
+        header("Location: ../eventFeed.php")
 
       } else {
 
