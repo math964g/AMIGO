@@ -105,7 +105,7 @@
 
       if ($conn->query($sql) === TRUE) {
 
-        header("Location: ../eventFeed.php")
+        header("Location: eventFeed.php");
 
       } else {
 
