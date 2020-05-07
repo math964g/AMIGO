@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require 'dbConnect.php';
 
 $picturePath = "'../../assets/event_img/testpic.jpg'";
