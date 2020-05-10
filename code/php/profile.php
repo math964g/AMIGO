@@ -53,8 +53,7 @@
             <option value="placeholder">Chose interest</option>
             <option value="1">Hockey</option>
             <option value="2">Kage</option>
-            <option value="3">Din Mor</option>
-            <option value="4">Partying</option>
+            <option value="3">Fodbold</option>
           </select>
         </form>
 
