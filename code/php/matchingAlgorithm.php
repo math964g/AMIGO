@@ -16,6 +16,7 @@ $resultCheck = mysqli_num_rows($result);
 if ($resultCheck > 0) {
   // We fetch each row of data, and insert it into our $row variable
   while ($row = mysqli_fetch_assoc($result)) {
+    // Always puts the users email first
     $loggedInUser[0] = $row['Email'];
     array_push($loggedInUser, $row['Interest_ID']);
   }
@@ -30,9 +31,7 @@ if ($resultCheck > 0) {
   // A good explanation for multidimensional arrays can be found on the next line
   // https://www.geeksforgeeks.org/multidimensional-arrays-in-php/
   while ($row = mysqli_fetch_assoc($result)) {
-
       array_push($allUserInterests, $row);
-
   }
 }
 
@@ -41,26 +40,29 @@ $conn->close();
 $allMatches = [];
 $currentMatch = [];
 $successCounter = 0;
-$interestsMatchedCounter = 0;
+$maxInterestCounter = 0;
 
-// We use & to create a reference. Without it $allMatches becomes a local variable.
-function calculateMatchPercent(&$currentMatch, $successCounter, $interestsMatchedCounter) {
+// We use '&' to create a reference. Without it $allMatches becomes a local variable.
+// Calculates the match percent for 2 users
+function calculateMatchPercent(&$currentMatch, $successCounter, $maxInterestCounter) {
 
   // ERROR HANDLING: Makes sure there won't be an error if the math is divided by 0
-  if ($successCounter >= 1 && $interestsMatchedCounter >= 1) {
-    $matchPercent = (($successCounter / $interestsMatchedCounter) * 100);
+  if ($successCounter >= 1 && $maxInterestCounter >= 1) {
+    $matchPercent = (($successCounter / $maxInterestCounter) * 100);
   } else {
     $matchPercent = 0;
   }
-  // Adds match percent to the second spot in the array
+  // Adds match percent to the second spot in the array (without deleting anything '0')
   array_splice($currentMatch, 1, 0, $matchPercent);
 }
 
+// Saves the current match
 function saveMatch(&$allMatches, $currentMatch) {
   // Pushes the match into $allMatches
   array_push($allMatches, $currentMatch);
 }
 
+// The next section sorts the array
 // A loop for every user and their interests
 for ($i=0; $i < count($allUserInterests); $i++) {
 
@@ -70,14 +72,14 @@ for ($i=0; $i < count($allUserInterests); $i++) {
     // Checks if the element is the email, by using strpos (string position?) to see if it contains "@"
     if (strpos($arrayItem, "@")) {
 
-      // If array is not empty or if array is not the same as the last
+      // If array is empty or if array is not the same as the last
       if (empty($currentMatch) || $currentMatch[0] != $arrayItem) {
 
         // Makes sure we don't push any empty match data
         if (!empty($currentMatch)) {
 
           // Get match %
-          calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
+          calculateMatchPercent($currentMatch, $successCounter, $maxInterestCounter);
 
           // Save match
           saveMatch($allMatches, $currentMatch);
@@ -87,7 +89,7 @@ for ($i=0; $i < count($allUserInterests); $i++) {
 
           // Resets counter values
           $successCounter = 0;
-          $interestsMatchedCounter = 0;
+          $maxInterestCounter = 0;
         }
 
         // Specifies the email to always be in the first spot of the array (makes things easier later)
@@ -98,24 +100,26 @@ for ($i=0; $i < count($allUserInterests); $i++) {
     // It pushes the element to an array
     else {
 
-      // Checks for common interests
+      // Checks for common interests in the user array
+      // Adjusts the matching interest counter
       if (in_array($arrayItem, $loggedInUser)) {
 
         // Pushes interest to array
         array_push($currentMatch, $arrayItem);
         // Add to succes number and max count for specific user
         $successCounter++;
-        $interestsMatchedCounter++;
+        $maxInterestCounter++;
       } else {
         // Add to max count for specific user
-        $interestsMatchedCounter++;
+        $maxInterestCounter++;
       }
     }
   }
 }
 
+// The next 2 methods exist to add the last user to the array as well
 // Get match %
-calculateMatchPercent($currentMatch, $successCounter, $interestsMatchedCounter);
+calculateMatchPercent($currentMatch, $successCounter, $maxInterestCounter);
 
 // Save match
 saveMatch($allMatches, $currentMatch);
@@ -129,22 +133,29 @@ for ($i=0; $i < count($allMatches); $i++) {
 
   $newMatch = $allMatches[$i];
 
+  // Compares match %
   // Sorted after how explicit they are
+  // Checks to see if the previous match is not empty AND and if the match % is the same
   if (!empty($topMatch) && $topMatch[1] == $newMatch[1]) {
 
+    // Checks true, if two matches has the same %
+    // TODO:
     $contestingMatchesCheck = true;
 
     if (!in_array($topMatch, $contestingMatches)) {
       array_push($contestingMatches, $topMatch);
     }
 
+    // TODO: Could this just be else?
     if (!in_array($newMatch, $contestingMatches)) {
       array_push($contestingMatches, $newMatch);
     }
+
     // IDEA: It's possible to create a lot more rules in here for deciding.
     // Maybe nr. 1 only has  3 common interests while nr. 2 has 17 common interests.
     // In that case matching with nr. 2 would be ideal
   }
+  // If empty OR if match % is lower
   elseif (empty($topMatch) || $topMatch[1] < $newMatch[1]) {
     $topMatch = $newMatch;
   }
